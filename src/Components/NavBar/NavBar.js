@@ -1,18 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import {
   Navbar,
 } from 'react-bootstrap';
 import './NavBar.css';
-import logo from './Mathtronauts_Logo.png'
+import logo from './Mathtronaut_Logo.png'
 
 export default class NavBar extends React.Component {
   render() {
     return (
       <Navbar>
         <Navbar.Header>
-                <div className="logo img-responsive">
-                  <a href="/"><img className="img-responsive" href="/" src={logo} alt="logo"/></a>
-                </div>
+          <div className="logo img-responsive">
+            <Link to="/">
+              <img className="img-responsive" src={logo} alt="logo"/>
+            </Link>
+          </div>
         </Navbar.Header>
       </Navbar>
     );

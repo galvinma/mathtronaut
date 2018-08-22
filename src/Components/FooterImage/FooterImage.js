@@ -1,5 +1,4 @@
 import React from 'react'
-
 import './FooterImage.css';
 import moonfooter from './moon_footer.png'
 

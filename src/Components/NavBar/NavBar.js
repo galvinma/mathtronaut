@@ -3,7 +3,7 @@ import {
   Navbar,
 } from 'react-bootstrap';
 import './NavBar.css';
-import logo from './Space_Math_Logo.png'
+import logo from './Mathtronauts_Logo.png'
 
 export default class NavBar extends React.Component {
   render() {

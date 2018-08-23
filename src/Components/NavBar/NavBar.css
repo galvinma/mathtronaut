@@ -4,9 +4,22 @@
   background: transparent;
   border-color: transparent;
 }
+ul.nav {             /* <- this affects all navbars */
+  float: none;
+  text-align: center;
+  display: inline-block;
+}
 
-.logo
+a.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 3em !important;
+  font-family: 'Roboto', sans-serif;
+}
+
+a.styled_nav_link
 {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  text-decoration: inherit !important;
+  color: inherit !important;
+  font-size: 1.5em !important;
 }

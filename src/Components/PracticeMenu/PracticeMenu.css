@@ -1,0 +1,18 @@
+.buttonwrapper
+{
+  text-align: center;
+}
+
+.btngroup
+{
+  margin: 0 auto;
+  text-align: center;
+  width: inherit;
+  display: inline-block;
+}
+
+.practicebutton
+{
+  margin-left: 10px;
+  margin-right: 10px;
+}

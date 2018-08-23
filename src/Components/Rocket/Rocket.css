@@ -1,7 +1,13 @@
 .rocket
 {
-  position: fixed;
-  left: 50px;
-  bottom: 200px;
   width: 100%;
+  max-width: 15vw;
+}
+
+.rocket_container
+{
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 100vh;
 }

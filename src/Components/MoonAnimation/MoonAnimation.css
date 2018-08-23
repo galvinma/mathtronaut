@@ -1,6 +1,13 @@
 .moon_animation
 {
-  position: absolute;
-  top: 0px;
-  right: 0px;
+  width: 100%;
+  max-width: 10vw;
+}
+
+.moon_container
+{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  height: 100vh;
 }

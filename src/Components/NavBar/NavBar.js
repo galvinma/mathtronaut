@@ -2,22 +2,44 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import {
   Navbar,
+  Nav,
+  NavItem,
 } from 'react-bootstrap';
 import './NavBar.css';
-import logo from './Mathtronaut_Logo.png'
 
 export default class NavBar extends React.Component {
   render() {
     return (
-      <Navbar>
+      <Navbar inverse collapseOnSelect>
         <Navbar.Header>
-          <div className="logo img-responsive">
-            <Link to="/">
-              <img className="img-responsive" src={logo} alt="logo"/>
-            </Link>
-          </div>
+          <Navbar.Brand>
+            <Link to="/">MATHTRONAUT</Link>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+
+        <Navbar.Header pullRight>
+          <Navbar.Collapse>
+          <Nav pullRight>
+            <NavItem >
+              <Link className="styled_nav_link" to="/regular">NORMAL MODE</Link>
+            </NavItem>
+            <NavItem >
+              <Link className="styled_nav_link" to="/challenge">CHALLENGE MODE</Link>
+            </NavItem>
+            <NavItem >
+              <Link className="styled_nav_link" to="/practice">PRACTICE</Link>
+            </NavItem>
+            <NavItem >
+              <Link className="styled_nav_link" to="/leaderboard">LEADERBOARD</Link>
+            </NavItem>
+
+          </Nav>
+          </Navbar.Collapse>
         </Navbar.Header>
       </Navbar>
+
+
     );
   }
 }

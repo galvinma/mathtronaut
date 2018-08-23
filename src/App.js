@@ -12,24 +12,21 @@ import MoonAnimation from './Components/MoonAnimation/MoonAnimation'
 import NavBar from './Components/NavBar/NavBar'
 import Landing from './Components/Landing/Landing'
 import ShootingStarAnimation from './Components/ShootingStarAnimation/ShootingStarAnimation'
+import PracticeMenu from './Components/PracticeMenu/PracticeMenu'
 // Stylesheets
 import './App.css';
 
 const Home = () => (
   <div>
     <Landing />
-    <ShootingStarAnimation />
   </div>
 )
 
 const RegularMode = () => (
   <div>
-    <Rocket />
-    <MoonAnimation />
     <MathJumbo />
     <VerticalSpacer />
     <MathForm />
-    <FooterImage />
   </div>
 )
 
@@ -41,7 +38,7 @@ const ChallengeMode = () => (
 
 const Practice = () => (
   <div>
-    This will be practice mode...
+    <PracticeMenu />
   </div>
 
 )
@@ -56,8 +53,15 @@ class App extends Component {
   render() {
     return (
       <div>
+        // Animations/Images
         <Background />
+        <ShootingStarAnimation />
+        <FooterImage />
+        <MoonAnimation />
+
+        // Content
         <NavBar />
+
 
         <Route path="/" exact component={Home}/>
         <Route path="/regular" exact component={RegularMode}/>

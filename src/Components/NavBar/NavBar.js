@@ -18,7 +18,7 @@ export default class NavBar extends React.Component {
           <Navbar.Toggle />
         </Navbar.Header>
 
-        <Navbar.Header pullRight>
+        <Navbar.Header>
           <Navbar.Collapse>
           <Nav pullRight>
             <NavItem >

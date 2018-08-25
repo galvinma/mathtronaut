@@ -53,13 +53,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        // Animations/Images
         <Background />
         <ShootingStarAnimation />
         <FooterImage />
         <MoonAnimation />
 
-        // Content
         <NavBar />
 
 

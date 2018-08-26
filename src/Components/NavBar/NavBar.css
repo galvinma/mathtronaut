@@ -17,7 +17,7 @@ a.navbar-brand {
   font-family: 'Roboto', sans-serif;
 }
 
-a.styled_nav_link
+li.styled_nav_link
 {
   text-decoration: inherit !important;
   color: inherit !important;

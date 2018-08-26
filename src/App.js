@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 // Components
+import Test from './Components/Test/Test'
 import MathJumbo from './Components/MathJumbo/MathJumbo'
 import MathForm from './Components/MathForm/MathForm'
 import Background from './Components/Background/Background'
 import FooterImage from './Components/FooterImage/FooterImage'
-import Rocket from './Components/Rocket/Rocket'
 import VerticalSpacer from './Components/VerticalSpacer/VerticalSpacer'
 import MoonAnimation from './Components/MoonAnimation/MoonAnimation'
 import NavBar from './Components/NavBar/NavBar'
@@ -25,6 +25,7 @@ const Home = () => (
 const RegularMode = () => (
   <div>
     <MathJumbo />
+    <Test />
     <VerticalSpacer />
     <MathForm />
   </div>

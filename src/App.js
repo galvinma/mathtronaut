@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom';
 
 // Components
-import Test from './Components/Test/Test'
 import MathJumbo from './Components/MathJumbo/MathJumbo'
 import MathForm from './Components/MathForm/MathForm'
 import Background from './Components/Background/Background'
@@ -25,7 +24,6 @@ const Home = () => (
 const RegularMode = () => (
   <div>
     <MathJumbo />
-    <Test />
     <VerticalSpacer />
     <MathForm />
   </div>

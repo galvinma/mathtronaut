@@ -21,9 +21,6 @@ export default class MathJumbo extends React.Component {
         num: 2
       }
     })
-    .then(function (response) {
-      console.log(response);
-    })
     .then(res => {
       const gamelogic = res.data;
       this.setState({ gamelogic });
@@ -31,8 +28,22 @@ export default class MathJumbo extends React.Component {
 }
   render() {
     return (
-      <ul>
-        { this.state.gamelogic.map(logic => <li>{logic.gamelogic.name}</li>)}
-      </ul>
-  )}
+      <div>
+      <Grid>
+        <Row className="show-grid">
+          <Col sm={4} smOffset={4}>
+            <Jumbotron>
+              <div className="math_jumbo">
+                { this.state.gamelogic.map(logic => <h2>{logic.gamelogic.numbers}</h2>)}
+                <br />
+                { this.state.gamelogic.map(logic => <h2>{logic.gamelogic.answer}</h2>)}
+              </div>
+            </Jumbotron>
+          </Col>
+        </Row>
+      </Grid>
+
+      </div>
+    )
+  }
 }

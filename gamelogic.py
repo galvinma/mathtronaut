@@ -12,7 +12,6 @@ def multiplication_game_logic(nums):
 
 def score(scores):
     result = json.loads(scores)
-    print("result is "+str(result))
     score = 0
     for x in result:
         score = score + int(x)

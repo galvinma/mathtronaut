@@ -1,17 +1,22 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom';
 
+
+// Pages
+import RegularMode from './Pages/RegularMode/RegularMode'
+import PracticeMenu from './Pages/PracticeMenu/PracticeMenu'
+import Landing from './Pages/Landing/Landing'
+
 // Components
-import MathJumbo from './Components/MathJumbo/MathJumbo'
-import MathForm from './Components/MathForm/MathForm'
-import Background from './Components/Background/Background'
-import FooterImage from './Components/FooterImage/FooterImage'
 import VerticalSpacer from './Components/VerticalSpacer/VerticalSpacer'
-import MoonAnimation from './Components/MoonAnimation/MoonAnimation'
 import NavBar from './Components/NavBar/NavBar'
-import Landing from './Components/Landing/Landing'
-import ShootingStarAnimation from './Components/ShootingStarAnimation/ShootingStarAnimation'
-import PracticeMenu from './Components/PracticeMenu/PracticeMenu'
+
+// Images and Animations
+import Background from './Images/Background/Background'
+import FooterImage from './Images/FooterImage/FooterImage'
+import ShootingStarAnimation from './Images/ShootingStarAnimation/ShootingStarAnimation'
+import MoonAnimation from './Images/MoonAnimation/MoonAnimation'
+
 // Stylesheets
 import './App.css';
 
@@ -21,11 +26,9 @@ const Home = () => (
   </div>
 )
 
-const RegularMode = () => (
+const Regular = () => (
   <div>
-    <MathJumbo />
-    <VerticalSpacer />
-    <MathForm />
+    <RegularMode />
   </div>
 )
 
@@ -61,7 +64,7 @@ class App extends Component {
 
 
         <Route path="/" exact component={Home}/>
-        <Route path="/regular" exact component={RegularMode}/>
+        <Route path="/regular" exact component={Regular}/>
         <Route path="/challenge" exact component={ChallengeMode}/>
         <Route path="/leaderboard" exact component={Leaderboard}/>
         <Route path="/practice" exact component={Practice}/>

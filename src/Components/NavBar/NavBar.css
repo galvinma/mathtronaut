@@ -3,6 +3,8 @@
   background-color: transparent;
   background: transparent;
   border-color: transparent;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 ul.nav {             /* <- this affects all navbars */
   float: none;
@@ -15,11 +17,13 @@ a.navbar-brand {
   align-items: center;
   font-size: 3em !important;
   font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 
 li.styled_nav_link
 {
   text-decoration: inherit !important;
   color: inherit !important;
-  font-size: 1.5em !important;
+  font-size: 1.2em !important;
+  font-weight: 300;
 }

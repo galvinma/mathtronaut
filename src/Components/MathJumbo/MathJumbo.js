@@ -8,38 +8,23 @@ import {
 } from 'react-bootstrap';
 
 // redux
-import store from '../../Store/index'
-import {getNumbers, getTime} from '../../Actions/index'
+import store from '../../Store/store'
 
 // functions
-import { numberGenerator } from "../../Utils/axios"
+import { updateDisplay } from "../../Utils/numbers"
 import { startTimer } from "../../Utils/timer"
+import { resetScore } from "../../Utils/score"
 
 // css
 import './MathJumbo.css';
 
 class MathJumbo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   onStart() {
+    // Start the timer and upate time in the store
+    resetScore();
     startTimer();
-
-    var nums = numberGenerator('REGULAR');
-    nums.then(function (response) {
-      store.dispatch(getNumbers({
-        numbers: response,
-      }))
-    });
-  }
-
-  onAnswer() {
-    // log answer for scoring
-
-    // reset timer
-
-    // Get new numbers from store
+    updateDisplay('REGULAR');
   }
 
   render() {
@@ -51,7 +36,7 @@ class MathJumbo extends React.Component {
               <button onClick={this.onStart}>Press me to start the game!</button>
               <Jumbotron>
                 <div className="math_jumbo">
-                  <p>{ this.props.numbers.numbers } </p>
+                  <p>{ this.props.left.left } { this.props.mid.mid } { this.props.right.right } </p>
                 </div>
               </Jumbotron>
             </Col>
@@ -63,7 +48,9 @@ class MathJumbo extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    numbers: state.numbers,
+    left: state.left,
+    mid: state.mid,
+    right: state.right,
     time: state.time
   }
 }

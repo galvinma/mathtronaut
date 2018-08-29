@@ -6,65 +6,39 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
+
+// css
 import './MathForm.css';
 
+// redux
+import store from '../../Store/store'
+
+// functions
+import { scoreQuestion, resetScore } from "../../Utils/score"
+import { updateDisplay } from "../../Utils/numbers"
+import { startTimer } from "../../Utils/timer"
+
 export default class MathForm extends React.Component {
-    constructor (props) {
+  constructor (props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.sendScores = this.sendScores.bind(this);
-    }
+  };
 
-    componentDidMount() {
-      // this.startTimer()
-  }
-
-    handleSubmit = (event) => {
-      if(event.keyCode === 13){
-        this.LocaleContext.answers.push(parseInt(event.target.value));
-        this.LocaleContext.counter = this.LocaleContext.counter + 1;
-        console.log(this.LocaleContext.delta)
-        console.log(this.LocaleContext.answers)
-        console.log(this.LocaleContext.counter)
-        if(this.LocaleContext.counter === 10) {
-          console.log("score here")
-          {this.sendScores()}
-        };
+  handleSubmit = (event) => {
+    if(event.keyCode === 13){
         event.preventDefault();
-        this.setState({
-             placeholder: "",
-         });
-        this.LocaleContext.delta = 0;
-        // this.startTimer();
-      }
-    }
-
-    // startTimer = (event) => {
-    //   var timeleft = new Date().getTime();
-    //   var time = setInterval(function(){
-    //     var now = new Date().getTime();
-    //     this.LocaleContext.delta = now - timeleft;
-    //     // console.log(delta)
-    //     if (this.LocaleContext.delta > 10000) {
-    //       clearInterval(time);
-    //     }
-    //   }, 10);
-    //   return this.LocaleContext.delta
-    // }
-
-
-    sendScores = (event) => {
-      axios.get('http://127.0.0.1:5000/api/v1/score', {
-        params: {
-          answers: JSON.stringify(this.LocaleContext.answers)
-        }
-      })
-      .then(res => {
-        const score = res.data;
-        // this.setState({ score });
-        console.log(score)
-      })
-    }
+        // score the answer
+        var value = event.target.value
+        var integer = parseInt(value, 10);
+        scoreQuestion(integer);
+        // Reset timer
+        startTimer();
+        // Get new numbers from store
+        updateDisplay('REGULAR');
+        // Clear the input field
+        event.target.value = ""
+      };
+    };
 
     render() {
       return (
@@ -81,6 +55,5 @@ export default class MathForm extends React.Component {
             </Col>
           </Row>
         </Grid>
-      );
-    }
+      )}
   }

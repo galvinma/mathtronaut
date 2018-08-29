@@ -1,6 +1,6 @@
 // redux
-import store from './../Store/index'
-import {getTime} from './../Actions/index'
+import store from './../Store/store'
+import {getTime} from './../Actions/actions'
 
 export function startTimer() {
   var timeleft = new Date().getTime();

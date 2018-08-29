@@ -8,7 +8,6 @@ import PracticeMenu from './Pages/PracticeMenu/PracticeMenu'
 import Landing from './Pages/Landing/Landing'
 
 // Components
-import VerticalSpacer from './Components/VerticalSpacer/VerticalSpacer'
 import NavBar from './Components/NavBar/NavBar'
 
 // Images and Animations

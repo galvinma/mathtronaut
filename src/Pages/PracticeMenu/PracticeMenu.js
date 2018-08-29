@@ -11,31 +11,22 @@ export default class PracticeMenu extends React.Component {
       <div>
         <div className="buttonwrapper">
           <ButtonToolbar>
-            <div className="btngroup">
-                <Button className="practicebutton" bsSize="large" type="button">One</Button>
-                <Button className="practicebutton" bsSize="large" type="button">Two</Button>
-                <Button className="practicebutton" bsSize="large" type="button">Three</Button>
-                <Button className="practicebutton" bsSize="large" type="button">Four</Button>
-
-            </div>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">One</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Two</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Three</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Four</Button>
           </ButtonToolbar>
           <ButtonToolbar>
-            <div className="btngroup">
-                <Button className="practicebutton" bsSize="large" type="button">Five</Button>
-                <Button className="practicebutton" bsSize="large" type="button">Six</Button>
-                <Button className="practicebutton" bsSize="large" type="button">Seven</Button>
-                <Button className="practicebutton" bsSize="large" type="button">Eight</Button>
-
-            </div>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Five</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Six</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Seven</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Eight</Button>
           </ButtonToolbar>
           <ButtonToolbar>
-            <div className="btngroup">
-                <Button className="practicebutton" bsSize="large" type="button">Nine</Button>
-                <Button className="practicebutton" bsSize="large" type="button">Ten</Button>
-                <Button className="practicebutton" bsSize="large" type="button">Eleven</Button>
-                <Button className="practicebutton" bsSize="large" type="button">Twelve</Button>
-
-            </div>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Nine</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Ten</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Eleven</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button">Twelve</Button>
           </ButtonToolbar>
         </div>
       </div>

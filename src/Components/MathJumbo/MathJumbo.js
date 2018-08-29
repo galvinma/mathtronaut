@@ -51,7 +51,7 @@ class MathJumbo extends React.Component {
               <button onClick={this.onStart}>Press me to start the game!</button>
               <Jumbotron>
                 <div className="math_jumbo">
-                  <p>{ this.props.numbers.numbers }</p>
+                  <p>{ this.props.numbers.numbers } </p>
                 </div>
               </Jumbotron>
             </Col>

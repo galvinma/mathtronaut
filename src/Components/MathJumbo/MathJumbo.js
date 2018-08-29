@@ -9,10 +9,11 @@ import {
 
 // redux
 import store from '../../Store/index'
-import {getNumbers} from '../../Actions/index'
+import {getNumbers, getTime} from '../../Actions/index'
 
 // functions
 import { numberGenerator } from "../../Utils/axios"
+import { startTimer } from "../../Utils/timer"
 
 // css
 import './MathJumbo.css';
@@ -22,21 +23,15 @@ class MathJumbo extends React.Component {
     super(props);
   }
 
-  // updateNumbers() {
-  //   // getNumbers('REGULAR');
-  // }
+  onStart() {
+    startTimer();
 
-  // displayNumbers = () => {
-  //   this.props.dispatch({type: 'GET_NUMBERS'});
-  // }
-
-  onStart = () => {
-    // Start timer
-    // this.updateNumbers()
+    var nums = numberGenerator('REGULAR');
+    nums.then(function (response) {
       store.dispatch(getNumbers({
-        numbers: [3],
+        numbers: response,
       }))
-
+    });
   }
 
   onAnswer() {
@@ -50,31 +45,27 @@ class MathJumbo extends React.Component {
   render() {
     return (
       <div>
-      <Grid>
-        <Row className="show-grid">
-          <Col sm={4} smOffset={4}>
-            <button onClick={this.onStart}>Press me to start the game!</button>
-            <Jumbotron>
-              <div className="math_jumbo">
-              </div>
-            </Jumbotron>
-          </Col>
-        </Row>
-      </Grid>
-
+        <Grid>
+          <Row className="show-grid">
+            <Col sm={4} smOffset={4}>
+              <button onClick={this.onStart}>Press me to start the game!</button>
+              <Jumbotron>
+                <div className="math_jumbo">
+                  <p>{ this.props.numbers.numbers }</p>
+                </div>
+              </Jumbotron>
+            </Col>
+          </Row>
+        </Grid>
       </div>
-    )
-  }
+    )}
 }
 
 const mapStateToProps = state => {
-  return { numbers: state.numbers}
+  return {
+    numbers: state.numbers,
+    time: state.time
+  }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     getNumbers: numbers => dispatch({type: 'GET_NUMBERS'})
-//   }
-// };
 
 export default connect(mapStateToProps)(MathJumbo);

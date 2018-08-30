@@ -19,25 +19,15 @@ import { resetScore, resetQuestionCount } from "../../Utils/reset"
 import './MathJumbo.css';
 
 class MathJumbo extends React.Component {
-
-  onStart() {
-    // Start the timer and upate time in the store
-    resetScore();
-    resetQuestionCount();
-    startTimer();
-    updateDisplay('REGULAR');
-  }
-
   render() {
     return (
       <div>
         <Grid>
           <Row className="show-grid">
             <Col sm={4} smOffset={4}>
-              <button onClick={this.onStart}>Press me to start the game!</button>
               <Jumbotron>
-                <div className="math_jumbo">
-                  <p>{ this.props.left.left } x { this.props.mid.mid } { this.props.right.right } </p>
+                <div id="math_jumbo" className="math_jumbo">
+                  { this.props.left.left } x { this.props.mid.mid } { this.props.right.right }
                 </div>
               </Jumbotron>
             </Col>

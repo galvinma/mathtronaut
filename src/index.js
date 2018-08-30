@@ -9,6 +9,7 @@ import store from './Store/store'
 // css
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-notifications/lib/notifications.css';
 
 // Components
 import App from './App'

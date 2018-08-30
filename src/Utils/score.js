@@ -2,34 +2,29 @@
 import store from '.././Store/store'
 import {getScore} from '.././Actions/actions'
 
-export function resetScore() {
-  store.dispatch(getScore({
-    score: 0,
-  }))
-}
+// functions
+import {flashAnswer} from './flash'
+
 
 export function scoreQuestion(answer) {
     var totalscore = store.getState().score.score;
+    var correct = store.getState().left.left * store.getState().mid.mid
     var temp = 0;
     var timebank = 10000;
-    if (store.getState().time.time >= 10000)
-    {
-      console.log("User took too long, score of 0")
-    }
-    else if (store.getState().left.left * store.getState().mid.mid === answer)
+    if ( correct === answer && store.getState().time.time <= 10000)
     {
       var temp = timebank - store.getState().time.time;
       totalscore = totalscore + temp
-      console.log("Correct! User scored "+temp)
-      console.log("New total score is "+totalscore)
+      console.log("got here")
+      flashAnswer("CORRECT", correct);
     }
     else
     {
-      console.log("Incorrect!")
+      flashAnswer("INCORRECT", correct)
     }
+
     // send new total score to the store
     store.dispatch(getScore({
       score: totalscore,
     }))
-    console.log(store.getState().score.score)
 }

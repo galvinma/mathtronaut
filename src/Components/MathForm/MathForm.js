@@ -14,9 +14,11 @@ import './MathForm.css';
 import store from '../../Store/store'
 
 // functions
-import { scoreQuestion, resetScore } from "../../Utils/score"
+import { scoreQuestion } from "../../Utils/score"
 import { updateDisplay } from "../../Utils/numbers"
 import { startTimer } from "../../Utils/timer"
+import { resetScore, resetQuestionCount } from "../../Utils/reset"
+import { updateQuestionCount } from "../../Utils/count"
 
 export default class MathForm extends React.Component {
   constructor (props) {
@@ -25,18 +27,24 @@ export default class MathForm extends React.Component {
   };
 
   handleSubmit = (event) => {
-    if(event.keyCode === 13){
+    if (event.keyCode === 13){
         event.preventDefault();
-        // score the answer
-        var value = event.target.value
-        var integer = parseInt(value, 10);
+        var integer = parseInt(event.target.value, 10);
         scoreQuestion(integer);
-        // Reset timer
-        startTimer();
-        // Get new numbers from store
-        updateDisplay('REGULAR');
-        // Clear the input field
-        event.target.value = ""
+        // Upate question counter
+        updateQuestionCount();
+        if (store.getState().count.count <= 10) {
+              // Reset timer
+              startTimer();
+              // Get new numbers from store
+              updateDisplay('REGULAR');
+              // Clear the input field
+              event.target.value = ""
+          }
+          else
+          {
+            console.log("Game over. Final score is " + store.getState().score.score)
+          }
       };
     };
 

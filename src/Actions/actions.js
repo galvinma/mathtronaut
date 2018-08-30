@@ -23,3 +23,8 @@ export const getScore = score => ({
   type: "GET_SCORE",
   score
 });
+
+export const getQuestionCount = count => ({
+  type: "GET_QUESTION_COUNT",
+  count
+});

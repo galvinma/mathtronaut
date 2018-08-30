@@ -3,7 +3,9 @@ import {  GET_LEFT,
           GET_MID,
           GET_RIGHT,
           GET_TIME,
-          GET_SCORE, }
+          GET_SCORE,
+          GET_QUESTION_COUNT,
+        }
 from "../Constants/action-types";
 
 
@@ -13,6 +15,7 @@ const initialState = {
   right: "",
   time: 0,
   score: 0,
+  count: 1,
 };
 
 function rootReducer(state = initialState, action) {
@@ -27,6 +30,8 @@ function rootReducer(state = initialState, action) {
         return getTime(state, action.time)
     case GET_SCORE:
         return getScore(state, action.score)
+    case GET_QUESTION_COUNT:
+        return getQuestionCount(state, action.count)
     default:
       return state;
   }
@@ -64,6 +69,13 @@ function getScore(state, score) {
   return {
     ...state,
     score: score
+  }
+}
+
+function getQuestionCount(state, count) {
+  return {
+    ...state,
+    count: count
   }
 }
 

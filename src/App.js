@@ -4,7 +4,9 @@ import { Route } from 'react-router-dom';
 
 // Pages
 import RegularMode from './Pages/RegularMode/RegularMode'
+import ChallengeMode from './Pages/ChallengeMode/ChallengeMode'
 import PracticeMenu from './Pages/PracticeMenu/PracticeMenu'
+import Leaderboard from './Pages/Leaderboard/Leaderboard'
 import Landing from './Pages/Landing/Landing'
 
 // Components
@@ -31,9 +33,9 @@ const Regular = () => (
   </div>
 )
 
-const ChallengeMode = () => (
+const Challenge = () => (
   <div>
-    This will be challenge mode...
+    <ChallengeMode />
   </div>
 )
 
@@ -44,9 +46,9 @@ const Practice = () => (
 
 )
 
-const Leaderboard = () => (
+const Leader = () => (
   <div>
-    This will be the leaderboard...
+    <Leaderboard />
   </div>
 )
 
@@ -64,8 +66,8 @@ class App extends Component {
 
         <Route path="/" exact component={Home}/>
         <Route path="/regular" exact component={Regular}/>
-        <Route path="/challenge" exact component={ChallengeMode}/>
-        <Route path="/leaderboard" exact component={Leaderboard}/>
+        <Route path="/challenge" exact component={Challenge}/>
+        <Route path="/leaderboard" exact component={Leader}/>
         <Route path="/practice" exact component={Practice}/>
       </div>
     )

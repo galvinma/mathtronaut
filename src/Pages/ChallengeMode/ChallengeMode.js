@@ -5,9 +5,9 @@ import MathForm from '../.././Components/MathForm/MathForm'
 import VerticalSpacer from '../.././Components/VerticalSpacer/VerticalSpacer'
 
 
-import './RegularMode.css';
+import './ChallengeMode.css';
 
-export default class RegularMode extends React.Component {
+export default class ChallengeMode extends React.Component {
   render() {
     return (
 

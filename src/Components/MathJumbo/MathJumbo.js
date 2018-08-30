@@ -13,7 +13,7 @@ import store from '../../Store/store'
 // functions
 import { updateDisplay } from "../../Utils/numbers"
 import { startTimer } from "../../Utils/timer"
-import { resetScore } from "../../Utils/score"
+import { resetScore, resetQuestionCount } from "../../Utils/reset"
 
 // css
 import './MathJumbo.css';
@@ -23,6 +23,7 @@ class MathJumbo extends React.Component {
   onStart() {
     // Start the timer and upate time in the store
     resetScore();
+    resetQuestionCount();
     startTimer();
     updateDisplay('REGULAR');
   }
@@ -36,7 +37,7 @@ class MathJumbo extends React.Component {
               <button onClick={this.onStart}>Press me to start the game!</button>
               <Jumbotron>
                 <div className="math_jumbo">
-                  <p>{ this.props.left.left } { this.props.mid.mid } { this.props.right.right } </p>
+                  <p>{ this.props.left.left } x { this.props.mid.mid } { this.props.right.right } </p>
                 </div>
               </Jumbotron>
             </Col>

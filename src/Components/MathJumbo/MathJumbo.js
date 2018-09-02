@@ -7,14 +7,6 @@ import {
   Jumbotron,
 } from 'react-bootstrap';
 
-// redux
-import store from '../../Store/store'
-
-// functions
-import { updateDisplay } from "../../Utils/numbers"
-import { startTimer } from "../../Utils/timer"
-import { resetScore, resetQuestionCount } from "../../Utils/reset"
-
 // css
 import './MathJumbo.css';
 
@@ -25,11 +17,17 @@ class MathJumbo extends React.Component {
         <Grid>
           <Row className="show-grid">
             <Col sm={4} smOffset={4}>
-              <Jumbotron>
-                <div id="math_jumbo" className="math_jumbo">
-                  { this.props.left.left } x { this.props.mid.mid } { this.props.right.right }
-                </div>
-              </Jumbotron>
+              <div id="math_jumbo_container">
+                <Jumbotron>
+                  <div id="math_jumbo" className="math_jumbo">
+                    { this.props.left.left } x { this.props.mid.mid }
+                  </div>
+                  <div id="final_score">
+                    <div>SCORE</div>
+                    <div>{ this.props.score.score }</div>
+                  </div>
+                </Jumbotron>
+              </div>
             </Col>
           </Row>
         </Grid>
@@ -42,7 +40,8 @@ const mapStateToProps = state => {
     left: state.left,
     mid: state.mid,
     right: state.right,
-    time: state.time
+    time: state.time,
+    score: state.score
   }
 }
 

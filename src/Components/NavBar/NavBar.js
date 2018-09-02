@@ -21,9 +21,8 @@ export default class NavBar extends React.Component {
         <Navbar.Header>
           <Navbar.Collapse>
           <Nav pullRight>
-            <NavItem componentClass={Link} className="styled_nav_link" href="/regular" to="/regular">REGULAR MODE</NavItem>
-            <NavItem componentClass={Link} className="styled_nav_link" href="/challenge" to="/challenge">CHALLENGE MODE</NavItem>
-            <NavItem componentClass={Link} className="styled_nav_link" href="/practice" to="/practice">PRACTICE</NavItem>
+            <NavItem componentClass={Link} className="styled_nav_link" href="/regular" to="/regular">GAME MODE</NavItem>
+            <NavItem componentClass={Link} className="styled_nav_link" href="/practice" to="/practice">PRACTICE MODE</NavItem>
             <NavItem componentClass={Link} className="styled_nav_link" href="/leaderboard" to="/leaderboard">LEADERBOARD</NavItem>
           </Nav>
           </Navbar.Collapse>

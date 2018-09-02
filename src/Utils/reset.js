@@ -1,6 +1,6 @@
 // redux
 import store from '.././Store/store'
-import {getScore, getQuestionCount} from '.././Actions/actions'
+import {getScore, getQuestionCount, getGameState} from '.././Actions/actions'
 
 
 export function resetScore() {
@@ -13,6 +13,22 @@ export function resetQuestionCount() {
   store.dispatch(getQuestionCount({
     count: 0,
   }))
+}
+
+export function resetGameState() {
+  store.dispatch(getGameState({
+    game_state: "READY",
+  }))
+}
+
+export function displayMathJumbo() {
+  var e = document.getElementById('math_jumbo_container');
+  e.style.display = 'block';
+}
+
+export function hideMathJumbo() {
+  var e = document.getElementById('math_jumbo_container');
+  e.style.display = 'none';
 }
 
 export function displayGameEntry() {
@@ -31,7 +47,23 @@ export function displayGameAnswer() {
   a.select();
 }
 
+export function displayFinalScore() {
+  var mj = document.getElementById('final_score');
+  mj.style.display = 'block';
+}
+
+export function hideFinalScore() {
+  var mj = document.getElementById('final_score');
+  mj.style.display = 'none';
+}
+
 export function displayMathJumboText() {
   var mj = document.getElementById('math_jumbo');
   mj.style.display = 'block';
+}
+
+
+export function hideMathJumboText() {
+  var mj = document.getElementById('math_jumbo');
+  mj.style.display = 'none';
 }

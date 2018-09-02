@@ -1,4 +1,7 @@
-#math_notification
+#math_incorrect_notification, #math_correct_notification
 {
   display: none;
+  background: none;
+  text-align: center;
+  color: rgb(157, 157, 157);
 }

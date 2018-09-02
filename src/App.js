@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom';
-
+import ReactDOM from 'react-dom'
 
 // Pages
 import RegularMode from './Pages/RegularMode/RegularMode'
-import ChallengeMode from './Pages/ChallengeMode/ChallengeMode'
 import PracticeMenu from './Pages/PracticeMenu/PracticeMenu'
 import Leaderboard from './Pages/Leaderboard/Leaderboard'
 import Landing from './Pages/Landing/Landing'
@@ -21,6 +20,10 @@ import MoonAnimation from './Images/MoonAnimation/MoonAnimation'
 // Stylesheets
 import './App.css';
 
+// redux
+import store from './Store/store'
+import {getGameState} from './Actions/actions'
+
 const Home = () => (
   <div>
     <Landing />
@@ -30,12 +33,6 @@ const Home = () => (
 const Regular = () => (
   <div>
     <RegularMode />
-  </div>
-)
-
-const Challenge = () => (
-  <div>
-    <ChallengeMode />
   </div>
 )
 
@@ -63,10 +60,8 @@ class App extends Component {
 
         <NavBar />
 
-
         <Route path="/" exact component={Home}/>
         <Route path="/regular" exact component={Regular}/>
-        <Route path="/challenge" exact component={Challenge}/>
         <Route path="/leaderboard" exact component={Leader}/>
         <Route path="/practice" exact component={Practice}/>
       </div>

@@ -8,6 +8,7 @@ import { incrementCount, resetCount } from "./counter"
 import { setLock } from "./lock"
 import { startTimer } from "./timer"
 import {  resetScore,
+          resetQuestionCount,
           displayGameEntry,
           displayGameAnswer,
           displayMathJumbo,
@@ -15,7 +16,6 @@ import {  resetScore,
           hideFinalScore,
           displayMathJumboText,
           hideMathJumboText } from "./reset"
-
 
 export function endGame() {
   // UI
@@ -31,6 +31,8 @@ export function endGame() {
   export function resetGame() {
   // redux
   resetScore();
+  resetQuestionCount();
+  setLock(false);
   // UI
   document.getElementById('game_answer').value = "";
   displayGameEntry();

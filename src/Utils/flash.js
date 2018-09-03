@@ -1,6 +1,3 @@
-// redux
-import store from '.././Store/store'
-
 export function flashAnswer(status, correct_answer) {
       if (status === "CORRECT")
       {

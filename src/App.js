@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom';
-import ReactDOM from 'react-dom'
 
 // Pages
 import RegularMode from './Pages/RegularMode/RegularMode'
@@ -14,15 +13,13 @@ import NavBar from './Components/NavBar/NavBar'
 // Images and Animations
 import Background from './Images/Background/Background'
 import FooterImage from './Images/FooterImage/FooterImage'
-import ShootingStarAnimation from './Images/ShootingStarAnimation/ShootingStarAnimation'
 import MoonAnimation from './Images/MoonAnimation/MoonAnimation'
 
 // Stylesheets
 import './App.css';
 
 // redux
-import store from './Store/store'
-import {getGameState} from './Actions/actions'
+import { handleSubmit } from "./Utils/mode"
 
 const Home = () => (
   <div>
@@ -50,18 +47,25 @@ const Leader = () => (
 )
 
 class App extends Component {
+  componentDidMount() {
+      window.addEventListener('keydown', function (e) {
+        if (e.keyCode === 13) {
+            handleSubmit()
+        }
+      });
+    }
+
   render() {
     return (
       <div>
         <Background />
-        <ShootingStarAnimation />
         <FooterImage />
         <MoonAnimation />
 
         <NavBar />
 
         <Route path="/" exact component={Home}/>
-        <Route path="/regular" exact component={Regular}/>
+        <Route path="/regular" exact component={Regular} />
         <Route path="/leaderboard" exact component={Leader}/>
         <Route path="/practice" exact component={Practice}/>
       </div>

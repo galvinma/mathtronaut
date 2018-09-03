@@ -1,44 +1,35 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-//
+import lifecycle from 'react-pure-lifecycle';
+
+// Components
 import MathJumbo from '../.././Components/MathJumbo/MathJumbo'
 import MathForm from '../.././Components/MathForm/MathForm'
 import VerticalSpacer from '../.././Components/VerticalSpacer/VerticalSpacer'
 import MathNotification from '../.././Components/MathNotification/MathNotification'
 
-import { handleSubmit, } from "../../Utils/mode"
-
-// redux
-import store from '../.././Store/store'
+// Functions
+import { resetGame } from '../.././Utils/mode'
 
 // css
 import './RegularMode.css';
 
-export default class RegularMode extends React.Component {
-  componentDidMount() {
-      console.log("mounting!")
+const componentDidMount = () => {
+  console.log("Mounting and resetting the game...")
+  resetGame();
+};
 
-      window.addEventListener('keydown', function (e) {
-        if (e.keyCode === 13) {
-            handleSubmit()
-        }
-      });
-    }
+const methods = {
+  componentDidMount
+};
 
-  componentWillUnmount() {
-    console.log("unmounting")
-    ReactDOM.unmountComponentAtNode(document.getElementById('rmode'));
-  }
-  
-  render() {
-    return (
+const RegularMode = (props) => (
+  <div id="rmode">
+    <MathJumbo />
+    <VerticalSpacer />
+    <MathForm />
+    <MathNotification />
+  </div>
+);
 
-          <div id="rmode">
-            <MathJumbo />
-            <VerticalSpacer />
-            <MathForm />
-            <MathNotification />
-          </div>
-
-  )}
-}
+// export default RegularMode
+export default lifecycle(methods)(RegularMode);

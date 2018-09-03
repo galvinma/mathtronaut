@@ -56,7 +56,6 @@ export function endGame() {
   export function playGame() {
   // redux
   updateDisplay('REGULAR');
-  startTimer("RESET");
   startTimer();
   // UI
   document.getElementById('game_answer').value = "";

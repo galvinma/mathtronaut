@@ -2,7 +2,7 @@
 import store from '.././Store/store'
 import {getLeft, getMid, getPracticeNumber} from '.././Actions/actions'
 
-function getRandomInt(min, max) {
+export function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
@@ -34,7 +34,6 @@ export function updateDisplay() {
 }
 
 export function updatePracticeNumber(value) {
-  console.log(value)
   store.dispatch(getPracticeNumber({
     practice_number: value,
   }))

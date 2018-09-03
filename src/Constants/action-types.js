@@ -1,4 +1,3 @@
-export const GET_TIME = "GET_TIME";
 export const GET_LEFT = "GET_LEFT";
 export const GET_MID = "GET_MID";
 export const GET_RIGHT = "GET_RIGHT";
@@ -13,3 +12,4 @@ export const LOCK = "LOCK";
 export const RESET = "RESET";
 export const LOCATION = "LOCATION";
 export const PRACTICE_NUMBER = "PRACTICE_NUMBER"
+export const GET_START_TIME = "GET_START_TIME";

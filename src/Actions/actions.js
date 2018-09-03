@@ -73,3 +73,13 @@ export const getPracticeNumber = practice_number => ({
   type: "PRACTICE_NUMBER",
   practice_number
 })
+
+export const getTimeDelta = time_delta => ({
+  type: "GET_TIME_DELTA",
+  time_delta
+})
+
+export const getStartTime = start_time => ({
+  type: "GET_START_TIME",
+  start_time
+})

@@ -1,8 +1,10 @@
+// functions
+import { getRandomInt } from '.././Utils/numbers'
+
 // actions
 import {  GET_LEFT,
           GET_MID,
           GET_RIGHT,
-          GET_TIME,
           GET_SCORE,
           GET_QUESTION_COUNT,
           LAST_LEFT,
@@ -14,6 +16,7 @@ import {  GET_LEFT,
           RESET,
           LOCATION,
           PRACTICE_NUMBER,
+          GET_START_TIME,
         }
 from "../Constants/action-types";
 
@@ -32,7 +35,9 @@ const initialState = {
   game_state: {game_state:"READY"},
   lock: {lock:false},
   location: {location:"LANDING"},
-  practice_number: {practice_number:0},
+  practice_number: {practice_number:getRandomInt(1,13)},
+  time_delta: {time_delta:0},
+  start_time: {start_time:0},
 };
 
 function rootReducer(state = initialState, action) {
@@ -45,8 +50,6 @@ function rootReducer(state = initialState, action) {
       return getMid(state, action.mid)
     case GET_RIGHT:
       return getRight(state, action.right)
-    case GET_TIME:
-        return getTime(state, action.time)
     case GET_SCORE:
         return getScore(state, action.score)
     case GET_QUESTION_COUNT:
@@ -67,6 +70,8 @@ function rootReducer(state = initialState, action) {
         return getLocation(state, action.location)
     case PRACTICE_NUMBER:
         return getPracticeNumber(state, action.practice_number)
+    case GET_START_TIME:
+        return getStartTime(state, action.start_time)
     default:
       return state;
   }
@@ -90,13 +95,6 @@ function getMid(state, mid) {
   return {
     ...state,
     mid: mid
-  }
-}
-
-function getTime(state, time) {
-  return {
-    ...state,
-    time: time
   }
 }
 
@@ -167,6 +165,13 @@ function getPracticeNumber(state, practice_number) {
   return {
     ...state,
     practice_number: practice_number
+  }
+}
+
+function getStartTime(state, start_time) {
+  return {
+    ...state,
+    start_time: start_time
   }
 }
 

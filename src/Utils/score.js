@@ -32,11 +32,17 @@ export function scoreQuestion(answer) {
     if (correct === answer)
     {
       flashAnswer("CORRECT", correct);
-      if (store.getState().time.time <= 10000)
+
+      var start = store.getState().start_time.start_time
+      var now = new Date().getTime();
+      var delta = now - start;
+      if (delta <= 10000 && delta >= 0)
       {
-        temp = timebank - store.getState().time.time;
-        totalscore = totalscore + temp
-        console.log("time left is "+temp)
+        var s = 10000 - delta
+        totalscore = totalscore + s
+        console.log("User took "+delta+" ms")
+        console.log("Time left is "+s)
+        console.log("New score is "+totalscore)
       }
     }
     else

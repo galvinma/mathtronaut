@@ -36,7 +36,7 @@ export function scoreQuestion(answer) {
       {
         temp = timebank - store.getState().time.time;
         totalscore = totalscore + temp
-        console.log(totalscore)
+        console.log("time left is "+temp)
       }
     }
     else

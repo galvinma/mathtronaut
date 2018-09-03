@@ -12,6 +12,8 @@ import {  GET_LEFT,
           GAME_STATE,
           LOCK,
           RESET,
+          LOCATION,
+          PRACTICE_NUMBER,
         }
 from "../Constants/action-types";
 
@@ -29,6 +31,8 @@ const initialState = {
   last_answer: {last_answer:1},
   game_state: {game_state:"READY"},
   lock: {lock:false},
+  location: {location:"LANDING"},
+  practice_number: {practice_number:0},
 };
 
 function rootReducer(state = initialState, action) {
@@ -59,6 +63,10 @@ function rootReducer(state = initialState, action) {
         return getGameState(state, action.game_state)
     case LOCK:
         return getLock(state, action.lock)
+    case LOCATION:
+        return getLocation(state, action.location)
+    case PRACTICE_NUMBER:
+        return getPracticeNumber(state, action.practice_number)
     default:
       return state;
   }
@@ -145,6 +153,20 @@ function getLock(state, lock) {
   return {
     ...state,
     lock: lock
+  }
+}
+
+function getLocation(state, location) {
+  return {
+    ...state,
+    location: location
+  }
+}
+
+function getPracticeNumber(state, practice_number) {
+  return {
+    ...state,
+    practice_number: practice_number
   }
 }
 

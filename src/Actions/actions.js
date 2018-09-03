@@ -63,3 +63,13 @@ export const getReset = reset => ({
   type: "RESET",
   reset
 })
+
+export const getLocation = location => ({
+  type: "LOCATION",
+  location
+})
+
+export const getPracticeNumber = practice_number => ({
+  type: "PRACTICE_NUMBER",
+  practice_number
+})

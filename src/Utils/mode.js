@@ -19,6 +19,7 @@ import {  resetScore,
 
 export function endGame() {
   // UI
+  document.getElementById('game_answer').value = "";
   displayGameEntry();
   hideMathJumboText();
   displayFinalScore();
@@ -44,8 +45,8 @@ export function endGame() {
   // redux
   resetScore();
   setLock(true);
-  incrementCount();
   // UI
+  updateDisplay();
   hideFinalScore();
   displayMathJumbo();
   displayMathJumboText();
@@ -55,27 +56,33 @@ export function endGame() {
   export function playGame() {
   // redux
   updateDisplay('REGULAR');
+  startTimer("RESET");
   startTimer();
-  incrementCount();
   // UI
   document.getElementById('game_answer').value = "";
 
 }
 
 export function handleSubmit() {
-        console.log(store.getState().lock.lock)
-        console.log(store.getState().count.count)
+  if (store.getState().location.location === "REGULAR" || store.getState().location.location === "PRACTICE")
+    {
         if (store.getState().lock.lock === false) {
-            enterGame()
+            enterGame();
+            playGame();
+            incrementCount();
         }
-        else if (store.getState().lock.lock === true && store.getState().count.count <= 9)
+        else if (store.getState().lock.lock === true && store.getState().count.count <= 10)
         {
             var integer = parseInt(document.getElementById('game_answer').value, 10);
             scoreQuestion(integer);
             playGame();
+            incrementCount();
+
+            if (store.getState().count.count > 10)
+            {
+              endGame();
+            }
         }
-        else if (store.getState().count.count > 9)
-        {
-          endGame();
-        }
-    };
+      }
+    return
+  };

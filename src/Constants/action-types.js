@@ -11,3 +11,5 @@ export const LAST_ANSWER = "LAST_ANSWER";
 export const GAME_STATE = "GAME_STATE";
 export const LOCK = "LOCK";
 export const RESET = "RESET";
+export const LOCATION = "LOCATION";
+export const PRACTICE_NUMBER = "PRACTICE_NUMBER"

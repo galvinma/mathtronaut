@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 // Pages
 import RegularMode from './Pages/RegularMode/RegularMode'
 import PracticeMenu from './Pages/PracticeMenu/PracticeMenu'
+import PracticeMode from './Pages/PracticeMode/PracticeMode'
 import Leaderboard from './Pages/Leaderboard/Leaderboard'
 import Landing from './Pages/Landing/Landing'
 
@@ -15,46 +16,51 @@ import Background from './Images/Background/Background'
 import FooterImage from './Images/FooterImage/FooterImage'
 import MoonAnimation from './Images/MoonAnimation/MoonAnimation'
 
+// Functions
+import { handleSubmit } from './Utils/mode'
+
 // Stylesheets
 import './App.css';
 
-// redux
-import { handleSubmit } from "./Utils/mode"
-
-const Home = () => (
+const _Landing = () => (
   <div>
     <Landing />
   </div>
 )
 
-const Regular = () => (
+const _RegularMode = () => (
   <div>
     <RegularMode />
   </div>
 )
 
-const Practice = () => (
+const _PracticeMenu = () => (
   <div>
     <PracticeMenu />
   </div>
-
 )
 
-const Leader = () => (
+const _PracticeMode = () => (
+  <div>
+    <PracticeMode />
+  </div>
+)
+
+const _Leaderboard = () => (
   <div>
     <Leaderboard />
   </div>
 )
 
 class App extends Component {
-  componentDidMount() {
-      window.addEventListener('keydown', function (e) {
-        if (e.keyCode === 13) {
-            handleSubmit()
-        }
-      });
-    }
 
+  componentDidMount() {
+    window.addEventListener('keydown', function (e) {
+      if (e.keyCode === 13) {
+          handleSubmit()
+      }
+    });
+  }
   render() {
     return (
       <div>
@@ -64,10 +70,11 @@ class App extends Component {
 
         <NavBar />
 
-        <Route path="/" exact component={Home}/>
-        <Route path="/regular" exact component={Regular} />
-        <Route path="/leaderboard" exact component={Leader}/>
-        <Route path="/practice" exact component={Practice}/>
+        <Route path="/" exact component={_Landing}/>
+        <Route path="/regularmode" exact component={_RegularMode} />
+        <Route path="/leaderboard" exact component={_Leaderboard}/>
+        <Route path="/practicemenu" component={_PracticeMenu}/>
+        <Route path="/practicemode" component={_PracticeMode}/>
       </div>
     )
   }

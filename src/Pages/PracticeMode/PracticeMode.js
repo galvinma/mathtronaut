@@ -9,20 +9,19 @@ import MathNotification from '../.././Components/MathNotification/MathNotificati
 
 // Functions
 import { resetGame, handleSubmit } from '../.././Utils/mode'
-import { updateDisplay } from '../.././Utils/numbers'
 
 // redux
 import store from '../.././Store/store'
 import { getLocation } from '../.././Actions/actions'
 
 // css
-import './RegularMode.css';
+import './PracticeMode.css';
 
 const componentDidMount = () => {
   resetGame();
 
   store.dispatch(getLocation({
-    location: "REGULAR",
+    location: "PRACTICE",
   }))
 
 };
@@ -32,7 +31,7 @@ const methods = {
 };
 
 const RegularMode = (props) => (
-  <div id="rmode">
+  <div id="practicemode">
     <MathJumbo />
     <VerticalSpacer />
     <MathForm />

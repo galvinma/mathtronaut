@@ -29,9 +29,13 @@
 {
 
   text-decoration: inherit !important;
-  color: inherit !important;
+  color: inherit;
+  background-color: rgba(204, 204, 204, 0.7) !important;
   background: gray;
   font-size: 1.5em !important;
   width: 100px;
+}
 
+.btn:hover {
+  color: rgba(255, 255, 255, 0.8);
 }

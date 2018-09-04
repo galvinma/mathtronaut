@@ -1,16 +1,39 @@
-.modal-title, .modal-body {
+.modal
+{
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 50vw;
+}
+
+.modal-header, .modal-title, .modal-body, .modal-footer
+{
+  text-align: center;
+  align-items: center;
+  border-bottom: none;
+  border-top: none;
+}
+
+.modal-content
+{
+  background: rgba(204, 204, 204, 1) !important;
+}
+
+#username_input
+{
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(80, 80, 80, 1);
+  outline: none;
   text-align: center;
 }
 
-.modal-container
-{
-  position: relative;
-}
-
-.modal-container .modal, .modal-container .modal-backdrop
-{
-  position: absolute;
-}
 
 #hsmodal
 {

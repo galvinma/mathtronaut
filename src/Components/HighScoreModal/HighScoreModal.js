@@ -11,6 +11,14 @@ import './HighScoreModal.css';
 import { sendHighScore } from '../.././Utils/mode'
 
 export default class HighScoreModal extends React.Component {
+  componentDidMount() {
+    var modal = document.getElementById('hsmodal');
+    var closer = document.getElementsByClassName("close")[0];
+    closer.onclick = function() {
+        modal.style.display = "none";
+    }
+  }
+
   render() {
     return (
       <div id="hsmodal">
@@ -19,12 +27,9 @@ export default class HighScoreModal extends React.Component {
             <Modal.Title id="contained-modal-title-sm">MATHTRONAUT HIGH SCORE</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>To the moon! Please enter your name to place your score among the stars.</p>
-          </Modal.Body>
-          <Modal.Footer>
             <input id="username_input" />
-            <Button bsStyle="primary" onClick={sendHighScore}>Submit</Button>
-          </Modal.Footer>
+          </Modal.Body>
+          <Modal.Footer>Enter a name to place your score among the stars</Modal.Footer>
         </Modal.Dialog>
       </div>
     )

@@ -19,8 +19,6 @@ def insert_user(username, score):
 def remove_lowest_scores():
     Q = Query()
     low = int(min([x['score'] for x in db.all()]))
-    print("Low score is "+str(low))
-    print("Removing lowest...")
     print(db.remove(Q.score == low))
     db.remove(Q.score < low)
     return
@@ -35,13 +33,10 @@ def is_top():
     score = int(request.args.get('score'))
     low = int(min([x['score'] for x in db.all()]))
     if len(db.all()) < 25:
-        print("DB is less than 25")
         return jsonify(True)
     elif score > low:
-        print("DB is greater than 25, score > low")
         return jsonify(True)
     else:
-        print("DB is greater than 25, score < low")
         return jsonify(False)
 
 @app.route("/api/v1/insertuser", methods=['GET'])
@@ -49,12 +44,9 @@ def insert():
     # Get result
     username = request.args.get('username')
     score = request.args.get('score')
-    print("Length of db is "+str(len(db.all())))
     if len(db.all()) < 25:
-        print("inserting user "+username)
         insert_user(username, score)
     else:
-        print("Removing lowest and then inserting user "+username)
         remove_lowest_scores()
         insert_user(username, score)
     return jsonify(None)

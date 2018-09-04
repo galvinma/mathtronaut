@@ -18,7 +18,7 @@ export default class Leaderboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      leaders: ["Loading...",]
+      leaders: []
     };
   }
   componentDidMount() {
@@ -49,25 +49,27 @@ export default class Leaderboard extends React.Component {
         <Grid>
           <Row className="show-grid">
             <Col sm={6} smOffset={3}>
-              <Table responsive >
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Score</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.leaders.map(function(row, i) {
-                    return (
-                      <tr>
-                        <td>{i+1}</td>
-                        <td>{row[0]}</td>
-                        <td>{row[1]}</td>
-                      </tr>
-                    )})}
-                </tbody>
-              </Table>
+              <div className="leaderbody">
+                <Table responsive >
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Score</th>
+                    </tr>
+                  </thead>
+                  <tbody >
+                    {this.state.leaders.map(function(row, i) {
+                      return (
+                        <tr>
+                          <td>{i+1}</td>
+                          <td>{row[0]}</td>
+                          <td>{row[1]}</td>
+                        </tr>
+                      )})}
+                  </tbody>
+                </Table>
+              </div>
             </Col>
           </Row>
         </Grid>

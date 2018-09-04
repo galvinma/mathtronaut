@@ -40,6 +40,7 @@ export function checkHighScore() {
     if (response.data === true)
     {
       showModal()
+
     }
    })
   .catch((error)=>{
@@ -50,6 +51,8 @@ export function checkHighScore() {
 export function showModal() {
     var m = document.getElementById('hsmodal');
     m.style.display = 'block';
+    var n = document.getElementById('username_input')
+    n.focus();
 }
 
 export function hideModal() {
@@ -64,7 +67,6 @@ export function endGame() {
   hideMathJumboText();
   displayFinalScore();
   checkHighScore();
-  showModal();
 
   // redux
   setLock(false)
@@ -105,6 +107,11 @@ export function endGame() {
 }
 
 export function handleSubmit() {
+  if (document.getElementById('hsmodal').style.display === "block")
+  {
+    sendHighScore()
+    return
+  }
   if (store.getState().location.location === "REGULAR" || store.getState().location.location === "PRACTICE")
     {
         if (store.getState().lock.lock === false) {

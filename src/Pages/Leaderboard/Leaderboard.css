@@ -1,3 +1,11 @@
+.leaderbody
+{
+  display: block;
+  max-height:70vh;
+  overflow-y:scroll;
+
+}
+
 .table
 {
   text-align: center;

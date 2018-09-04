@@ -6,6 +6,7 @@ import MathJumbo from '../.././Components/MathJumbo/MathJumbo'
 import MathForm from '../.././Components/MathForm/MathForm'
 import VerticalSpacer from '../.././Components/VerticalSpacer/VerticalSpacer'
 import MathNotification from '../.././Components/MathNotification/MathNotification'
+import HighScoreModal from '../.././Components/HighScoreModal/HighScoreModal'
 
 // Functions
 import { resetGame } from '../.././Utils/mode'
@@ -36,6 +37,7 @@ const RegularMode = (props) => (
     <VerticalSpacer />
     <MathForm />
     <MathNotification />
+    <HighScoreModal />
   </div>
 );
 

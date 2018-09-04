@@ -42,10 +42,7 @@ export default class Leaderboard extends React.Component {
     .catch((error)=>{
        console.log(error);
     });
-
-
   }
-
   render() {
     return (
       <div id="leaderboard">
@@ -64,7 +61,7 @@ export default class Leaderboard extends React.Component {
                   {this.state.leaders.map(function(row, i) {
                     return (
                       <tr>
-                        <td>{i}</td>
+                        <td>{i+1}</td>
                         <td>{row[0]}</td>
                         <td>{row[1]}</td>
                       </tr>

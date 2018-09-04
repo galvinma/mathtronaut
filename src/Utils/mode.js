@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 // redux
 import store from '.././Store/store'
 
@@ -17,12 +19,52 @@ import {  resetScore,
           displayMathJumboText,
           hideMathJumboText } from "./reset"
 
+export function sendHighScore() {
+  var entry = document.getElementById('username_input').value;
+  axios.get('http://127.0.0.1:5000/api/v1/insertuser', {
+    params: {
+      username: entry,
+      score: store.getState().score.score
+    }
+  })
+  hideModal()
+}
+
+export function checkHighScore() {
+  var ishigh = axios.get('http://127.0.0.1:5000/api/v1/istop', {
+    params: {
+      score: store.getState().score.score
+    }
+  })
+  .then((response) => {
+    if (response.data === true)
+    {
+      showModal()
+    }
+   })
+  .catch((error)=>{
+     console.log(error);
+  });
+}
+
+export function showModal() {
+    var m = document.getElementById('hsmodal');
+    m.style.display = 'block';
+}
+
+export function hideModal() {
+    var m = document.getElementById('hsmodal');
+    m.style.display = 'none';
+}
+
 export function endGame() {
   // UI
   document.getElementById('game_answer').value = "";
   displayGameEntry();
   hideMathJumboText();
   displayFinalScore();
+  checkHighScore();
+  showModal();
 
   // redux
   setLock(false)

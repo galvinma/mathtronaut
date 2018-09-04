@@ -4,6 +4,10 @@ import {
   Button,
 } from 'react-bootstrap';
 
+// redux
+import store from '../.././Store/store'
+import { getModalBool } from '../.././Actions/actions'
+
 // css
 import './HighScoreModal.css';
 
@@ -16,6 +20,9 @@ export default class HighScoreModal extends React.Component {
     var closer = document.getElementsByClassName("close")[0];
     closer.onclick = function() {
         modal.style.display = "none";
+        store.dispatch(getModalBool({
+          modal_bool: false,
+        }))
     }
   }
 

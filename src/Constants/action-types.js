@@ -13,3 +13,4 @@ export const RESET = "RESET";
 export const LOCATION = "LOCATION";
 export const PRACTICE_NUMBER = "PRACTICE_NUMBER"
 export const GET_START_TIME = "GET_START_TIME";
+export const MODAL_BOOL = "MODAL_BOOL";

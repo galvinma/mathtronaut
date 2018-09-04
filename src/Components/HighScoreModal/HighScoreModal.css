@@ -19,7 +19,7 @@
 
 .modal-content
 {
-  background: rgba(204, 204, 204, 1) !important;
+  background: rgba(204, 204, 204, 0.7) !important;
 }
 
 #username_input

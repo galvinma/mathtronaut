@@ -83,3 +83,8 @@ export const getStartTime = start_time => ({
   type: "GET_START_TIME",
   start_time
 })
+
+export const getModalBool = modal_bool => ({
+  type: "MODAL_BOOL",
+  modal_bool
+})

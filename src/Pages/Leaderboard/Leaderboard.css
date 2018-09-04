@@ -9,7 +9,8 @@
 .table
 {
   text-align: center;
-  background-color: rgb(157, 157, 157);
+  /* background-color: rgb(157, 157, 157); */
+  background-color: rgba(204, 204, 204, 0.7) !important;
 }
 
 th

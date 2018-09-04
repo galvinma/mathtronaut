@@ -17,6 +17,7 @@ import {  GET_LEFT,
           LOCATION,
           PRACTICE_NUMBER,
           GET_START_TIME,
+          MODAL_BOOL,
         }
 from "../Constants/action-types";
 
@@ -38,6 +39,7 @@ const initialState = {
   practice_number: {practice_number:getRandomInt(1,13)},
   time_delta: {time_delta:0},
   start_time: {start_time:0},
+  modal_bool: {modal_bool:false}
 };
 
 function rootReducer(state = initialState, action) {
@@ -72,6 +74,8 @@ function rootReducer(state = initialState, action) {
         return getPracticeNumber(state, action.practice_number)
     case GET_START_TIME:
         return getStartTime(state, action.start_time)
+    case MODAL_BOOL:
+        return getModalBool(state, action.modal_bool)
     default:
       return state;
   }
@@ -172,6 +176,13 @@ function getStartTime(state, start_time) {
   return {
     ...state,
     start_time: start_time
+  }
+}
+
+function getModalBool(state, modal_bool) {
+  return {
+    ...state,
+    modal_bool: modal_bool
   }
 }
 

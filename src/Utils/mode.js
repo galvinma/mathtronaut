@@ -2,6 +2,8 @@ import axios from 'axios';
 
 // redux
 import store from '.././Store/store'
+import { getModalBool } from '.././Actions/actions'
+
 
 // functions
 import { scoreQuestion } from "./score"
@@ -49,6 +51,9 @@ export function checkHighScore() {
 }
 
 export function showModal() {
+    store.dispatch(getModalBool({
+      modal_bool: true,
+    }))
     var m = document.getElementById('hsmodal');
     m.style.display = 'block';
     var n = document.getElementById('username_input')
@@ -56,6 +61,9 @@ export function showModal() {
 }
 
 export function hideModal() {
+    store.dispatch(getModalBool({
+      modal_bool: false,
+    }))
     var m = document.getElementById('hsmodal');
     m.style.display = 'none';
 }
@@ -107,7 +115,7 @@ export function endGame() {
 }
 
 export function handleSubmit() {
-  if (document.getElementById('hsmodal').style.display === "block")
+  if (store.getState().modal_bool.modal_bool === true)
   {
     sendHighScore()
     return

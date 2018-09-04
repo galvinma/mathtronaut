@@ -27,8 +27,6 @@ export function scoreQuestion(answer) {
       last_answer: correct,
     }))
 
-    var temp = 0;
-    var timebank = 10000;
     if (correct === answer)
     {
       flashAnswer("CORRECT", correct);

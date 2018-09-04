@@ -8,7 +8,7 @@ import VerticalSpacer from '../.././Components/VerticalSpacer/VerticalSpacer'
 import MathNotification from '../.././Components/MathNotification/MathNotification'
 
 // Functions
-import { resetGame, handleSubmit } from '../.././Utils/mode'
+import { resetGame } from '../.././Utils/mode'
 
 // redux
 import store from '../.././Store/store'

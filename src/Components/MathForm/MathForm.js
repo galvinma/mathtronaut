@@ -17,7 +17,7 @@ const MathForm = () => (
           <div id="math_form_container">
             <Jumbotron className="math_form">
               <div>
-                <div id="game_entry">PRESS ENTER TO PLAY</div>
+                <div id="game_entry">PRESS ENTER</div>
                 <input id="game_answer" className="answer"/>
               </div>
             </Jumbotron>

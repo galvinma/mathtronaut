@@ -24,10 +24,19 @@ const componentDidMount = () => {
     location: "PRACTICE",
   }))
 
+  var pm = document.getElementById('practicemenu_link');
+  pm.className += "active";
+
 };
 
+const componentWillUnmount = () => {
+  var pm = document.getElementById('practicemenu_link');
+  pm.className -= "active";
+}
+
 const methods = {
-  componentDidMount
+  componentDidMount,
+  componentWillUnmount
 };
 
 const RegularMode = (props) => (

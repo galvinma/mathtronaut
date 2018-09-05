@@ -12,9 +12,9 @@ export default class NavBar extends React.Component {
     return (
       <Navbar staticTop inverse collapseOnSelect>
         <Navbar.Header>
-          <Navbar.Brand>
-            <Link to="/">MATHTRONAUT</Link>
-          </Navbar.Brand>
+          <Nav>
+            <NavItem componentClass={Link} className="mathronaut_brand" href="/" to="/">MATHTRONAUT</NavItem>
+          </Nav>
           <Navbar.Toggle />
         </Navbar.Header>
           <Navbar.Collapse>

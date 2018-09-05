@@ -1,7 +1,7 @@
 body
 {
   background-image: url('./Space_Math_Background.png');
-
+  background-attachment: fixed;
   height: 100%;
 
   /* Center and scale the image nicely */

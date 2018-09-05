@@ -13,10 +13,13 @@
 
 .practicebutton
 {
+  padding: 0px;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
+  display: inline-block !important;
+  vertical-align: middle !important;
 }
 
 .btn-toolbar
@@ -27,13 +30,17 @@
 }
 .btn
 {
-
+  display: inline-block !important;
+  vertical-align: middle !important;
   text-decoration: inherit !important;
   color: inherit;
   background-color: rgba(204, 204, 204, 0.7) !important;
   background: gray;
   font-size: 1.5em !important;
-  width: 100px;
+  width: 150px;
+  height: 150px;
+  max-width: 15vw;
+  max-height: 10vh;
 }
 
 .btn:hover {

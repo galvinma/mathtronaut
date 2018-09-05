@@ -26,8 +26,25 @@ export function displayMathJumbo() {
   e.style.display = 'block';
 }
 
+export function displayMathForm() {
+  var e = document.getElementById('math_form_container');
+  e.style.display = 'block';
+}
+
 export function hideMathJumbo() {
   var e = document.getElementById('math_jumbo_container');
+  e.style.display = 'none';
+}
+
+export function hideMathForm() {
+  var e = document.getElementById('math_form_container');
+  e.style.display = 'none';
+}
+
+export function hideGameEntryAndAnswer() {
+  var e = document.getElementById('game_entry');
+  var a = document.getElementById('game_answer');
+  a.style.display = 'none';
   e.style.display = 'none';
 }
 

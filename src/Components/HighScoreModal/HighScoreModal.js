@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from "react-redux";
 import {
   Modal,
   Button,
@@ -14,7 +15,7 @@ import './HighScoreModal.css';
 // functions
 import { sendHighScore } from '../.././Utils/mode'
 
-export default class HighScoreModal extends React.Component {
+class HighScoreModal extends React.Component {
   componentDidMount() {
     var modal = document.getElementById('hsmodal');
     var closer = document.getElementsByClassName("close")[0];
@@ -36,9 +37,17 @@ export default class HighScoreModal extends React.Component {
           <Modal.Body>
             <input id="username_input" />
           </Modal.Body>
-          <Modal.Footer>Enter a name to place your score among the stars</Modal.Footer>
+          <Modal.Footer>A score of {this.props.score.score} is legendary. Place your name among the stars.</Modal.Footer>
         </Modal.Dialog>
       </div>
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    score: state.score
+  }
+}
+
+export default connect(mapStateToProps)(HighScoreModal);

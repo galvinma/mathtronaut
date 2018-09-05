@@ -48,7 +48,7 @@ export default class Leaderboard extends React.Component {
       <div id="leaderboard">
         <Grid>
           <Row className="show-grid">
-            <Col sm={6} smOffset={3}>
+            <Col sm={8} smOffset={2}>
               <div className="leaderbody">
                 <Table responsive >
                   <thead>

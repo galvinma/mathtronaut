@@ -31,22 +31,22 @@ const PracticeMenu = () => (
       <div>
         <div className="buttonwrapper">
           <ButtonToolbar>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(1)}} componentClass={Link} href="/practicemode" to="/practicemode">1</Button>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(2)}} componentClass={Link} href="/practicemode" to="/practicemode">2</Button>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(3)}} componentClass={Link} href="/practicemode" to="/practicemode">3</Button>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(4)}} componentClass={Link} href="/practicemode" to="/practicemode">4</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(1)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">1</span></Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(2)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">2</span></Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(3)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">3</span></Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(4)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">4</span></Button>
           </ButtonToolbar>
           <ButtonToolbar>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(5)}} componentClass={Link} href="/practicemode" to="/practicemode">5</Button>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(6)}} componentClass={Link} href="/practicemode" to="/practicemode">6</Button>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(7)}} componentClass={Link} href="/practicemode" to="/practicemode">7</Button>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(8)}} componentClass={Link} href="/practicemode" to="/practicemode">8</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(5)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">5</span></Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(6)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">6</span></Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(7)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">7</span></Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(8)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">8</span></Button>
           </ButtonToolbar>
           <ButtonToolbar>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(9)}} componentClass={Link} href="/practicemode" to="/practicemode">9</Button>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(10)}} componentClass={Link} href="/practicemode" to="/practicemode">10</Button>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(11)}} componentClass={Link} href="/practicemode" to="/practicemode">11</Button>
-            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(12)}} componentClass={Link} href="/practicemode" to="/practicemode">12</Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(9)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">9</span></Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(10)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">10</span></Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(11)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">11</span></Button>
+            <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(12)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">12</span></Button>
           </ButtonToolbar>
         </div>
       </div>

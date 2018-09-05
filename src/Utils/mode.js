@@ -16,10 +16,14 @@ import {  resetScore,
           displayGameEntry,
           displayGameAnswer,
           displayMathJumbo,
+          displayMathForm,
           displayFinalScore,
           hideFinalScore,
           displayMathJumboText,
-          hideMathJumboText } from "./reset"
+          hideMathJumbo,
+          hideMathJumboText,
+          hideGameEntryAndAnswer,
+          hideMathForm } from "./reset"
 
 export function sendHighScore() {
   var entry = document.getElementById('username_input').value;
@@ -58,6 +62,9 @@ export function showModal() {
     m.style.display = 'block';
     var n = document.getElementById('username_input')
     n.focus();
+    hideMathJumbo();
+    hideGameEntryAndAnswer();
+    hideMathForm();
 }
 
 export function hideModal() {
@@ -66,6 +73,9 @@ export function hideModal() {
     }))
     var m = document.getElementById('hsmodal');
     m.style.display = 'none';
+    displayMathForm();
+    displayGameEntry();
+    resetGame();
 }
 
 export function endGame() {

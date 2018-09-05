@@ -2,18 +2,40 @@
 {
   display: block;
   max-height:70vh;
-  overflow-y:scroll;
-
+  font-family: 'Roboto', sans-serif;
+  border-radius: 6px;
 }
 
 .table
 {
+  border-radius: 6px;
+  border: none !important;
   text-align: center;
-  /* background-color: rgb(157, 157, 157); */
   background-color: rgba(204, 204, 204, 0.7) !important;
+}
+
+th, td
+{
+  text-align:center;
+  padding: 10px !important;
+  border: none !important;
+  border-bottom: none !important;
 }
 
 th
 {
-  text-align:center;
+  font-size: 16px;
+  /* border-bottom: 1px solid black !important; */
+}
+
+.scrollbar
+{
+  background-color: #F5F5F5;
+  float: left;
+  height: 300px;
+  margin-bottom: 25px;
+  margin-left: 22px;
+  margin-top: 40px;
+  width: 65px;
+  overflow-y: scroll;
 }

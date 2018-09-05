@@ -6,7 +6,17 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  max-width: 50vw;
+  border-radius: 6px;
+}
+
+.modal-dialog
+{
+  width: 50vw;
+}
+
+.modal-content
+{
+  min-height: 30vh;
 }
 
 .modal-header, .modal-title, .modal-body, .modal-footer

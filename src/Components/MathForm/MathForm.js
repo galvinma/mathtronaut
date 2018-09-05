@@ -14,12 +14,14 @@ const MathForm = () => (
     <Grid>
       <Row className="show-grid">
         <Col sm={4} smOffset={4}>
-          <Jumbotron className="math_form">
-            <div>
-              <div id="game_entry">PRESS ENTER TO PLAY</div>
-              <input id="game_answer" className="answer"/>
-            </div>
-          </Jumbotron>
+          <div id="math_form_container">
+            <Jumbotron className="math_form">
+              <div>
+                <div id="game_entry">PRESS ENTER TO PLAY</div>
+                <input id="game_answer" className="answer"/>
+              </div>
+            </Jumbotron>
+          </div>
         </Col>
       </Row>
     </Grid>

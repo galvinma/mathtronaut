@@ -84,7 +84,10 @@ export function endGame() {
   displayGameEntry();
   hideMathJumboText();
   displayFinalScore();
-  checkHighScore();
+  if (store.getState().location.location === "REGULAR" )
+  {
+    checkHighScore();
+  }
 
   // redux
   setLock(false)

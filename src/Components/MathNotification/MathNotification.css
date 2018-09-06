@@ -3,5 +3,5 @@
   display: none;
   background: none;
   text-align: center;
-  color: rgb(157, 157, 157);
+  color: rgba(220, 220, 220, 0.85) !important;
 }

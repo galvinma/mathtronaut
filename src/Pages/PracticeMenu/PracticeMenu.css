@@ -13,6 +13,7 @@
 
 .practicebutton
 {
+  color: black;
   padding: 0px;
   margin-left: 10px;
   margin-right: 10px;
@@ -34,7 +35,7 @@
   vertical-align: middle !important;
   text-decoration: inherit !important;
   color: inherit;
-  background-color: rgba(204, 204, 204, 0.7) !important;
+  background-color: rgba(220, 220, 220, 0.7) !important;
   background: gray;
   font-size: 1.5em !important;
   width: 150px;

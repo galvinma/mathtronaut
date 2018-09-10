@@ -1,6 +1,7 @@
 import json
 import datetime
 import operator
+import schedule
 from tinydb import TinyDB, Query
 from flask import Flask, jsonify, request
 from flask_api import FlaskAPI
@@ -19,9 +20,17 @@ def insert_user(username, score):
 def remove_lowest_scores():
     Q = Query()
     low = int(min([x['score'] for x in db.all()]))
-    print(db.remove(Q.score == low))
     db.remove(Q.score < low)
     return
+
+def purgeOldScores():
+    Q = Query()
+    for x in db.all():
+        strip = datetime.datetime.strptime(x['timestamp'], "%Y-%m-%d %H:%M:%S.%f")
+        if datetime.datetime.now() - strip > datetime.timedelta(1):
+            db.remove(Q.username == x['username'])
+
+schedule.every(10).minutes.do(purgeOldScores)
 
 @app.route("/api/v1/leaderboard", methods=['GET'])
 def return_leaderboard():

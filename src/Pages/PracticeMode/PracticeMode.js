@@ -41,6 +41,7 @@ const methods = {
 
 const RegularMode = (props) => (
   <div id="practicemode">
+    <VerticalSpacer40 />
     <MathJumbo />
     <VerticalSpacer40 />
     <MathForm />

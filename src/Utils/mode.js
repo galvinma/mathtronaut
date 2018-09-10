@@ -25,17 +25,32 @@ import {  resetScore,
           hideGameEntryAndAnswer,
           hideMathForm,
           displayProgressBar,
-          hideProgressBar } from "./reset"
+          hideProgressBar,
+          displayMathNotification,
+          hideMathNotification, } from "./reset"
 import { animateTimeLeft } from "./progress"
 
 export function sendHighScore() {
   var entry = document.getElementById('username_input').value;
-  axios.get('http://127.0.0.1:5000/api/v1/insertuser', {
-    params: {
-      username: entry,
-      score: store.getState().score.score
-    }
-  })
+  if (entry.length >= 20 || entry.length == 0 || entry == "")
+  {
+    var v = document.getElementById('modal_error');
+    v.style.display = 'block';
+    setTimeout(function() {
+      v.style.display = 'none';
+    }, 5000);
+    return;
+  }
+
+  else if (entry.length < 20 && entry.length > 0) {
+      axios.get('http://127.0.0.1:5000/api/v1/insertuser', {
+        params: {
+          username: entry,
+          score: store.getState().score.score
+        }
+      })
+  }
+
   hideModal()
 }
 
@@ -86,6 +101,7 @@ export function endGame() {
   document.getElementById('game_answer').value = "";
   displayGameEntry();
   hideMathJumboText();
+  hideMathNotification();
   hideProgressBar();
   // clear old interval
   clearInterval(store.getState().progress_bar_id.progress_bar_id);
@@ -126,6 +142,7 @@ export function endGame() {
   displayMathJumboText();
   displayGameAnswer();
   displayProgressBar();
+  displayMathNotification();
 }
 
   export function playGame() {

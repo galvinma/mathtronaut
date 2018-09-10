@@ -16,11 +16,13 @@ class MathNotification extends React.Component {
         <Grid>
           <Row className="show-grid">
             <Col sm={4} smOffset={4}>
-                <div id="math_correct_notification">
-                  <p>CORRECT!</p>
-                </div>
-                <div id="math_incorrect_notification">
-                  <p>INCORRECT! {this.props.last_left.last_left} x {this.props.last_mid.last_mid} = { this.props.last_answer.last_answer }</p>
+                <div id="math_notif">
+                  <div id="math_correct_notification">
+                    <p>CORRECT!</p>
+                  </div>
+                  <div id="math_incorrect_notification">
+                    <p>INCORRECT! {this.props.last_left.last_left} x {this.props.last_mid.last_mid} = { this.props.last_answer.last_answer }</p>
+                  </div>
                 </div>
             </Col>
           </Row>

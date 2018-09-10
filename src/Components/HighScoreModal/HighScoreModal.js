@@ -13,18 +13,16 @@ import { getModalBool } from '../.././Actions/actions'
 import './HighScoreModal.css';
 
 // functions
-import { sendHighScore } from '../.././Utils/mode'
+import { sendHighScore, hideModal } from '../.././Utils/mode'
 
 class HighScoreModal extends React.Component {
   componentDidMount() {
     var modal = document.getElementById('hsmodal');
     var closer = document.getElementsByClassName("close")[0];
     closer.onclick = function() {
-        modal.style.display = "none";
-        store.dispatch(getModalBool({
-          modal_bool: false,
-        }))
+        hideModal();
     }
+
   }
 
   render() {
@@ -37,7 +35,11 @@ class HighScoreModal extends React.Component {
           <Modal.Body>
             <input id="username_input" />
           </Modal.Body>
-          <Modal.Footer>A score of {this.props.score.score} is legendary. Place your name among the stars.</Modal.Footer>
+          <Modal.Footer>
+            <div id="hsmessage">A score of {this.props.score.score} is legendary. Place your name among the stars.</div>
+            <div></div>
+            <div id="modal_error">Valid entries are less than 20 characters. Please try again.</div>
+          </Modal.Footer>
         </Modal.Dialog>
       </div>
     )

@@ -84,6 +84,16 @@ export function hideMathJumboText() {
   mj.style.display = 'none';
 }
 
+export function displayMathNotification() {
+  var mn = document.getElementById('math_notif');
+  mn.style.display = 'block';
+}
+
+export function hideMathNotification() {
+  var mn = document.getElementById('math_notif');
+  mn.style.display = 'none';
+}
+
 export function displayProgressBar() {
   var p = document.getElementById('progress');
   p.style.display = 'block';

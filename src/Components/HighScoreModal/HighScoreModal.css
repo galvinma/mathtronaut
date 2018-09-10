@@ -49,6 +49,17 @@
   display: none;
 }
 
+#modal_error
+{
+  display: none;
+  color: rgb(169, 68, 66)
+}
+
+#hsmessage
+{
+  margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 768px) {
   .modal-dialog
   {

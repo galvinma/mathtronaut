@@ -38,9 +38,6 @@ export function scoreQuestion(answer) {
       {
         var s = 10000 - delta
         totalscore = totalscore + s
-        console.log("User took "+delta+" ms")
-        console.log("Time left is "+s)
-        console.log("New score is "+totalscore)
       }
     }
     else

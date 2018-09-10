@@ -1,6 +1,15 @@
-.shooting_star_animation
+.ShootingStarOne
 {
   position: absolute;
-  Left: 10px;
+  left: 10px;
   top: 20px;
+  max-width: 50vw;
+}
+
+.ShootingStarTwo
+{
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  max-width: 20vw;
 }

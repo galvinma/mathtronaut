@@ -3,7 +3,7 @@ import axios from 'axios';
 // redux
 import store from '.././Store/store'
 import { getModalBool } from '.././Actions/actions'
-
+import { getProgressBarId } from '.././Actions/actions'
 
 // functions
 import { scoreQuestion } from "./score"
@@ -23,7 +23,10 @@ import {  resetScore,
           hideMathJumbo,
           hideMathJumboText,
           hideGameEntryAndAnswer,
-          hideMathForm } from "./reset"
+          hideMathForm,
+          displayProgressBar,
+          hideProgressBar } from "./reset"
+import { animateTimeLeft } from "./progress"
 
 export function sendHighScore() {
   var entry = document.getElementById('username_input').value;
@@ -83,6 +86,12 @@ export function endGame() {
   document.getElementById('game_answer').value = "";
   displayGameEntry();
   hideMathJumboText();
+  hideProgressBar();
+  // clear old interval
+  clearInterval(store.getState().progress_bar_id.progress_bar_id);
+  var elem = document.getElementById("bar");
+  elem.style.width = '0%';
+
   displayFinalScore();
   if (store.getState().location.location === "REGULAR" )
   {
@@ -116,6 +125,7 @@ export function endGame() {
   displayMathJumbo();
   displayMathJumboText();
   displayGameAnswer();
+  displayProgressBar();
 }
 
   export function playGame() {
@@ -139,6 +149,7 @@ export function handleSubmit() {
             enterGame();
             playGame();
             incrementCount();
+            animateTimeLeft();
         }
         else if (store.getState().lock.lock === true && store.getState().count.count <= 10)
         {
@@ -146,6 +157,7 @@ export function handleSubmit() {
             scoreQuestion(integer);
             playGame();
             incrementCount();
+            animateTimeLeft();
 
             if (store.getState().count.count > 10)
             {

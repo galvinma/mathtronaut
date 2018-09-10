@@ -7,10 +7,23 @@ import {
   Jumbotron,
 } from 'react-bootstrap';
 
+// Functions
+import { handleSubmit } from '../.././Utils/mode'
+
+// Components
+import ProgressBar from '../ProgressBar/ProgressBar'
+
 // css
 import './MathJumbo.css';
 
 class MathJumbo extends React.Component {
+  componentDidMount() {
+    var mjc = document.getElementById("math_form_container");
+    mjc.addEventListener("click", function () {
+        console.log("clicked!")
+        handleSubmit()
+      })
+  }
   render() {
     return (
       <div>
@@ -26,6 +39,7 @@ class MathJumbo extends React.Component {
                     <div>SCORE</div>
                     <div>{ this.props.score.score }</div>
                   </div>
+                  <ProgressBar />
                 </Jumbotron>
               </div>
             </Col>

@@ -18,6 +18,7 @@ import {  GET_LEFT,
           PRACTICE_NUMBER,
           GET_START_TIME,
           MODAL_BOOL,
+          PROGRESS_BAR_ID,
         }
 from "../Constants/action-types";
 
@@ -39,7 +40,8 @@ const initialState = {
   practice_number: {practice_number:getRandomInt(1,13)},
   time_delta: {time_delta:0},
   start_time: {start_time:0},
-  modal_bool: {modal_bool:false}
+  modal_bool: {modal_bool:false},
+  progress_bar_id: {progress_bar_id:0},
 };
 
 function rootReducer(state = initialState, action) {
@@ -76,6 +78,8 @@ function rootReducer(state = initialState, action) {
         return getStartTime(state, action.start_time)
     case MODAL_BOOL:
         return getModalBool(state, action.modal_bool)
+    case PROGRESS_BAR_ID:
+        return getProgressBarId(state, action.progress_bar_id)
     default:
       return state;
   }
@@ -183,6 +187,13 @@ function getModalBool(state, modal_bool) {
   return {
     ...state,
     modal_bool: modal_bool
+  }
+}
+
+function getProgressBarId(state, progress_bar_id) {
+  return {
+    ...state,
+    progress_bar_id: progress_bar_id
   }
 }
 

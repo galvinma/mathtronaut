@@ -79,8 +79,17 @@ export function displayMathJumboText() {
   mj.style.display = 'block';
 }
 
-
 export function hideMathJumboText() {
   var mj = document.getElementById('math_jumbo');
   mj.style.display = 'none';
+}
+
+export function displayProgressBar() {
+  var p = document.getElementById('progress');
+  p.style.display = 'block';
+}
+
+export function hideProgressBar() {
+  var p = document.getElementById('progress');
+  p.style.display = 'none';
 }

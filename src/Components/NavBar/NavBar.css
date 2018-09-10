@@ -5,12 +5,7 @@
   border-color: transparent;
   padding-bottom: 20px;
   padding-top: 20px;
-}
-
-.navbar-typo
-{
-  color: red !important;
-  border: none;
+  top: 0px;
 }
 
 .active
@@ -47,20 +42,23 @@ li.mathronaut_brand
 
 .navbar-right
 {
-  margin-right: 20px;
+  white-space: nowrap !important;
+  width: auto !important;
 }
 
 @media only screen and (max-width: 768px) {
   li.mathronaut_brand {
-    text-decoration: inherit !important;
-    color: inherit !important;
     font-size: 3rem;
-    font-weight: 500;
+    padding-left:20px !important;
+    padding-right:20px !important;
   }
+}
 
-  .navbar-header
-  {
-    margin-left:10px !important;
-    margin-right:10px !important;
+@media only screen and (max-width: 450px) {
+  li.mathronaut_brand {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-left:20px !important;
+    padding-right:20px !important;
   }
 }

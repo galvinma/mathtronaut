@@ -1,4 +1,9 @@
-.vertical_spacer
+.vertical_spacer_40
 {
     height: 40px;
+}
+
+.vertical_spacer_100
+{
+    height: 100px;
 }

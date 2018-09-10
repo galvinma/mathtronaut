@@ -1,11 +1,9 @@
 body
 {
-  background-image: url('./Space_Math_Background.png');
+  background-image: url('./Rocket_Landing_Background.gif');
   background-attachment: fixed;
   height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: left bottom;
 }

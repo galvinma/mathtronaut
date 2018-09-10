@@ -88,3 +88,8 @@ export const getModalBool = modal_bool => ({
   type: "MODAL_BOOL",
   modal_bool
 })
+
+export const getProgressBarId = progress_bar_id => ({
+  type: "PROGRESS_BAR_ID",
+  progress_bar_id
+})

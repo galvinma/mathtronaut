@@ -44,8 +44,18 @@
   text-align: center;
 }
 
-
 #hsmodal
 {
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .modal-dialog
+  {
+    width: 90vw;
+  }
+  .modal
+  {
+    width: 90vw;
+  }
 }

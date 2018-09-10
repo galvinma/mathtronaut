@@ -4,9 +4,10 @@ import lifecycle from 'react-pure-lifecycle';
 // Components
 import MathJumbo from '../.././Components/MathJumbo/MathJumbo'
 import MathForm from '../.././Components/MathForm/MathForm'
-import VerticalSpacer from '../.././Components/VerticalSpacer/VerticalSpacer'
+import VerticalSpacer40 from '../.././Components/VerticalSpacer/VerticalSpacer40'
 import MathNotification from '../.././Components/MathNotification/MathNotification'
 import HighScoreModal from '../.././Components/HighScoreModal/HighScoreModal'
+import ProgressBar from '../.././Components/ProgressBar/ProgressBar'
 
 // Functions
 import { resetGame } from '../.././Utils/mode'
@@ -33,8 +34,9 @@ const methods = {
 
 const RegularMode = (props) => (
   <div id="rmode">
+    <VerticalSpacer40 />
     <MathJumbo />
-    <VerticalSpacer />
+    <VerticalSpacer40 />
     <MathForm />
     <MathNotification />
     <HighScoreModal />

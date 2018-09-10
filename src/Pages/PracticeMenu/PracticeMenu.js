@@ -6,6 +6,9 @@ import {
   ButtonToolbar,
 } from 'react-bootstrap';
 
+// components
+import VerticalSpacer40 from '../.././Components/VerticalSpacer/VerticalSpacer40'
+
 // css
 import './PracticeMenu.css';
 
@@ -29,6 +32,7 @@ const methods = {
 
 const PracticeMenu = () => (
       <div>
+        <VerticalSpacer40 />
         <div className="buttonwrapper">
           <ButtonToolbar>
             <Button bsStyle="link" className="practicebutton" bsSize="large" type="button" onClick={() => {updatePracticeNumber(1)}} componentClass={Link} href="/practicemode" to="/practicemode"><span className="practicebutton">1</span></Button>

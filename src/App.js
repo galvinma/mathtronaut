@@ -13,8 +13,9 @@ import NavBar from './Components/NavBar/NavBar'
 
 // Images and Animations
 import Background from './Images/Background/Background'
-import FooterImage from './Images/FooterImage/FooterImage'
+import ShootingStarAnimation from './Images/ShootingStarAnimation/ShootingStarAnimation'
 import MoonAnimation from './Images/MoonAnimation/MoonAnimation'
+
 
 // Functions
 import { handleSubmit } from './Utils/mode'
@@ -65,8 +66,7 @@ class App extends Component {
     return (
       <div>
         <Background />
-        <FooterImage />
-        <MoonAnimation />
+        <ShootingStarAnimation />
 
         <NavBar />
 

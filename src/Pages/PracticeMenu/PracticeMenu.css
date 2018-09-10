@@ -40,8 +40,18 @@
   font-size: 1.5em !important;
   width: 150px;
   height: 150px;
+  line-height: 7.5vh;
   max-width: 15vw;
   max-height: 10vh;
+  min-height: 40px;
+}
+
+span.practicebutton
+{
+    float: none !important;
+    vertical-align: middle !important;
+    display: inline-flex !important;
+    align-items: center !important;
 }
 
 .btn:hover {

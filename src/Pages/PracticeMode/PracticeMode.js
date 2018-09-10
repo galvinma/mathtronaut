@@ -4,7 +4,7 @@ import lifecycle from 'react-pure-lifecycle';
 // Components
 import MathJumbo from '../.././Components/MathJumbo/MathJumbo'
 import MathForm from '../.././Components/MathForm/MathForm'
-import VerticalSpacer from '../.././Components/VerticalSpacer/VerticalSpacer'
+import VerticalSpacer40 from '../.././Components/VerticalSpacer/VerticalSpacer40'
 import MathNotification from '../.././Components/MathNotification/MathNotification'
 
 // Functions
@@ -42,7 +42,7 @@ const methods = {
 const RegularMode = (props) => (
   <div id="practicemode">
     <MathJumbo />
-    <VerticalSpacer />
+    <VerticalSpacer40 />
     <MathForm />
     <MathNotification />
   </div>

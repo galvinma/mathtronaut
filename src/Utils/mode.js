@@ -34,33 +34,34 @@ import {  displayRocketLaunch,
           reloadRocketLanding,
           reloadRocketLaunching, } from "./background.js"
 
-var rocket_launch = require('.././Images/Background/Rocket_Launching_Background.gif')
-var rocket_landing = require('.././Images/Background/Rocket_Landing_Background.gif')
-
 export function sendHighScore() {
-  var entry = document.getElementById('username_input').value;
-  if (entry.length >= 20 || entry.length == 0 || entry == "")
-  {
-    var v = document.getElementById('modal_error');
-    v.style.display = 'block';
-    setTimeout(function() {
-      v.style.display = 'none';
-    }, 5000);
-    return;
-  }
+  try {
+      var entry = document.getElementById('username_input').value;
+      if (entry.length >= 20 || entry.length == 0 || entry == "")
+      {
+        var v = document.getElementById('modal_error');
+        v.style.display = 'block';
+        setTimeout(function() {
+          v.style.display = 'none';
+        }, 5000);
+        return;
+      }
 
-  else if (entry.length < 20 && entry.length > 0) {
-      axios.get('http://127.0.0.1:5000/api/v1/insertuser', {
-        params: {
-          username: entry,
-          score: store.getState().score.score
-        }
-      })
+      else if (entry.length < 20 && entry.length > 0) {
+          axios.get('http://127.0.0.1:5000/api/v1/insertuser', {
+            params: {
+              username: entry,
+              score: store.getState().score.score
+            }
+          })
+      }
   }
-
-  hideModal()
-  reloadRocketLanding();
-  displayRocketLanding()
+  catch(err) {
+      console.log(err)
+  }
+  finally {
+      hideModal();
+  }
 }
 
 export function checkHighScore() {
@@ -99,11 +100,21 @@ export function hideModal() {
     store.dispatch(getModalBool({
       modal_bool: false,
     }))
-    var m = document.getElementById('hsmodal');
-    m.style.display = 'none';
-    displayMathForm();
-    displayGameEntry();
-    resetGame();
+
+    try {
+        var m = document.getElementById('hsmodal');
+        m.style.display = 'none';
+    }
+    catch(err) {
+        console.log(err)
+    }
+    finally {
+        displayMathForm();
+        displayGameEntry();
+        resetGame();
+        reloadRocketLanding();
+        displayRocketLanding();
+    }
 }
 
 export function endGame() {
@@ -167,8 +178,11 @@ export function endGame() {
 export function handleSubmit() {
   if (store.getState().modal_bool.modal_bool === true)
   {
-    sendHighScore()
-    return
+    if (store.getState().location.location === "REGULAR" || store.getState().location.location === "PRACTICE")
+    {
+      sendHighScore()
+      return
+    }
   }
   if (store.getState().location.location === "REGULAR" || store.getState().location.location === "PRACTICE")
     {

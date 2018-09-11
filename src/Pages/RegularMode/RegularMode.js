@@ -11,10 +11,14 @@ import ProgressBar from '../.././Components/ProgressBar/ProgressBar'
 
 // Functions
 import { resetGame } from '../.././Utils/mode'
+import {  displayRocketLaunch,
+          displayRocketLanding,
+          reloadRocketLanding,
+          reloadRocketLaunching, } from '../.././Utils/background.js'
 
 // redux
 import store from '../.././Store/store'
-import { getLocation } from '../.././Actions/actions'
+import { getLocation, getModalBool } from '../.././Actions/actions'
 
 // css
 import './RegularMode.css';
@@ -28,8 +32,20 @@ const componentDidMount = () => {
 
 };
 
+const componentWillUnmount = () => {
+  if (store.getState().modal_bool.modal_bool === true)
+  {
+    reloadRocketLanding()
+    displayRocketLanding()
+  }
+  store.dispatch(getModalBool({
+    modal_bool: false,
+  }))
+}
+
 const methods = {
-  componentDidMount
+  componentDidMount,
+  componentWillUnmount
 };
 
 const RegularMode = (props) => (

@@ -5,8 +5,9 @@ body, html
     width: 100%;
 }
 
-#landing_background, #launching_background
+#landing_background, #launching_background, #landing_static
 {
+  z-index: -100;
   background-attachment: fixed;
   position:fixed;
   width:100%;
@@ -24,6 +25,5 @@ body, html
 
 #launching_background
 {
-  background-image: url(./Images/Background/Rocket_Launching_Background.gif);
   display: none;
 }

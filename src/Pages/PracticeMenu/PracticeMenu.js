@@ -31,7 +31,7 @@ const methods = {
 };
 
 const PracticeMenu = () => (
-      <div>
+      <div id="praceticemenu">
         <VerticalSpacer40 />
         <div className="buttonwrapper">
           <ButtonToolbar>

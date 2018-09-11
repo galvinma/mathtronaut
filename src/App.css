@@ -1,5 +1,29 @@
-body, html {
+body, html
+{
     font-family: 'Roboto', sans-serif;
     height: 100%;
     width: 100%;
+}
+
+#landing_background, #launching_background
+{
+  background-attachment: fixed;
+  position:fixed;
+  width:100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+
+}
+
+#landing_background
+{
+  display: block;
+}
+
+#launching_background
+{
+  background-image: url(./Images/Background/Rocket_Launching_Background.gif);
+  display: none;
 }

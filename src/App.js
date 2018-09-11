@@ -12,10 +12,7 @@ import Landing from './Pages/Landing/Landing'
 import NavBar from './Components/NavBar/NavBar'
 
 // Images and Animations
-import Background from './Images/Background/Background'
 import ShootingStarAnimation from './Images/ShootingStarAnimation/ShootingStarAnimation'
-import MoonAnimation from './Images/MoonAnimation/MoonAnimation'
-
 
 // Functions
 import { handleSubmit } from './Utils/mode'
@@ -62,19 +59,22 @@ class App extends Component {
       }
     });
   }
+
   render() {
+    var landingback = require('./Images/Background/Rocket_Landing_Background.gif')
+    var launchingback = require('./Images/Background/Rocket_Launching_Background.gif')
     return (
       <div>
-        <Background />
-        <ShootingStarAnimation />
+        <img id="landing_background" style ={ { backgroundImage: "url("+landingback+")" } }/>
+        <img id="launching_background" style ={ { backgroundImage: "url("+launchingback+")" } }/>
+          <ShootingStarAnimation />
+          <NavBar />
 
-        <NavBar />
-
-        <Route path="/" exact component={_Landing}/>
-        <Route path="/regularmode" exact component={_RegularMode} />
-        <Route path="/leaderboard" exact component={_Leaderboard}/>
-        <Route path="/practicemenu" component={_PracticeMenu}/>
-        <Route path="/practicemode" component={_PracticeMode}/>
+          <Route path="/" exact component={_Landing}/>
+          <Route path="/regularmode" exact component={_RegularMode} />
+          <Route path="/leaderboard" exact component={_Leaderboard}/>
+          <Route path="/practicemenu" component={_PracticeMenu}/>
+          <Route path="/practicemode" component={_PracticeMode}/>
       </div>
     )
   }

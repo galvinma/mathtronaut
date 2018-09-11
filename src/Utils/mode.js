@@ -27,8 +27,15 @@ import {  resetScore,
           displayProgressBar,
           hideProgressBar,
           displayMathNotification,
-          hideMathNotification, } from "./reset"
+          hideMathNotification } from "./reset"
 import { animateTimeLeft } from "./progress"
+import {  displayRocketLaunch,
+          displayRocketLanding,
+          reloadRocketLanding,
+          reloadRocketLaunching, } from "./background.js"
+
+var rocket_launch = require('.././Images/Background/Rocket_Launching_Background.gif')
+var rocket_landing = require('.././Images/Background/Rocket_Landing_Background.gif')
 
 export function sendHighScore() {
   var entry = document.getElementById('username_input').value;
@@ -52,6 +59,8 @@ export function sendHighScore() {
   }
 
   hideModal()
+  reloadRocketLanding();
+  displayRocketLanding()
 }
 
 export function checkHighScore() {
@@ -63,8 +72,9 @@ export function checkHighScore() {
   .then((response) => {
     if (response.data === true)
     {
-      showModal()
-
+      showModal();
+      reloadRocketLaunching();
+      displayRocketLaunch();
     }
    })
   .catch((error)=>{

@@ -20,7 +20,6 @@ class MathJumbo extends React.Component {
   componentDidMount() {
     var mjc = document.getElementById("math_form_container");
     mjc.addEventListener("click", function () {
-        console.log("clicked!")
         handleSubmit()
       })
   }

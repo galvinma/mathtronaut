@@ -30,13 +30,14 @@ def return_leaderboard():
 @app.route("/api/v1/istop", methods=['GET'])
 def is_top():
     score = int(request.args.get('score'))
-    if len(db.all()) < 25:
+    if len(db.all()) == 0:
         return jsonify(True)
-    low = int(min([x['score'] for x in db.all()]))
-    if score > low:
-        return jsonify(True)
-    else:
-        return jsonify(False)
+    if len(db.all()) > 0:
+        low = int(min([x['score'] for x in db.all()]))
+        if score > low:
+            return jsonify(True)
+        else:
+            return jsonify(False)
 
 @app.route("/api/v1/insertuser", methods=['GET'])
 def insert():

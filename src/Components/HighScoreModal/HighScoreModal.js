@@ -35,7 +35,7 @@ class HighScoreModal extends React.Component {
           <Row className="show-grid">
             <Col sm={6} smOffset={3}>
               <div id="hsmodal">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
                 <div id="modal_title">MATHTRONAUT HIGH SCORE</div>

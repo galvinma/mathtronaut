@@ -43,11 +43,9 @@ def insert():
     # Get result
     username = request.args.get('username')
     score = request.args.get('score')
-    if len(db.all()) < 25:
-        insert_user(username, score)
+    insert_user(username, score)
     if len(db.all()) >= 25:
         remove_lowest_score()
-        insert_user(username, score)
     return jsonify(None)
 
 if __name__ == "__main__":

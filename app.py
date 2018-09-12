@@ -30,9 +30,9 @@ def return_leaderboard():
 @app.route("/api/v1/istop", methods=['GET'])
 def is_top():
     score = int(request.args.get('score'))
-    if len(db.all()) == 0:
+    if len(db.all()) >= 0 && len(db.all()) < 25:
         return jsonify(True)
-    if len(db.all()) > 0:
+    if len(db.all()) >= 25:
         low = int(min([x['score'] for x in db.all()]))
         if score > low:
             return jsonify(True)

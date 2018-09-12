@@ -138,9 +138,10 @@ export function endGame() {
     checkHighScore();
   }
 
-  if (store.getState().location.location === "PRACTICE")
+  if (store.getState().location.location === "PRACTICE" )
   {
-    hideMathJumbo();
+    // this occurs during check score call in regular mode
+    displayFinalScore();
   }
 
   // redux

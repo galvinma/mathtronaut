@@ -1,37 +1,18 @@
-.modal
+#hsmodal
 {
-  text-align: center;
-  align-items: center;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 6px;
-  min-height: 200px !important;
-}
-
-.modal-dialog
-{
-  width: 50vw;
-}
-
-.modal-content
-{
-  min-height: 50vh;
-}
-
-.modal-header, .modal-title, .modal-body, .modal-footer
-{
-  text-align: center;
-  align-items: center;
-  border-bottom: none;
-  border-top: none;
-}
-
-.modal-content
-{
+  display: none;
   background: rgba(220, 220, 220, 0.7) !important;
+  min-height: 100px;
+  min-width: 300px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px !important;
+  border: none !important;
+  text-align: center;
+  padding: 10px;
 }
+
 
 #username_input
 {
@@ -45,11 +26,6 @@
   text-align: center;
 }
 
-#hsmodal
-{
-  display: none;
-}
-
 #modal_error
 {
   display: none;
@@ -58,16 +34,23 @@
 
 #hsmessage
 {
-  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
+#modal_title
+{
+  font-size: 2em;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+
 @media only screen and (max-width: 768px) {
-  .modal-dialog
+  #modal_title
   {
-    width: 90vw;
-  }
-  .modal
-  {
-    width: 90vw;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-bottom: 10px;
   }
 }

@@ -46,7 +46,6 @@ export function sendHighScore() {
         }, 5000);
         return;
       }
-
       else if (entry.length < 20 && entry.length > 0) {
           axios.get('https://api.mathtronaut.org:5100/api/v1/insertuser', {
             params: {
@@ -54,13 +53,14 @@ export function sendHighScore() {
               score: store.getState().score.score
             }
           })
+          hideModal();
       }
   }
   catch(err) {
       console.log(err)
   }
   finally {
-      hideModal();
+
   }
 }
 

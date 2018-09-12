@@ -7,3 +7,16 @@
 {
     height: 100px;
 }
+
+
+
+@media only screen and (max-width: 768px) {
+  .vertical_spacer_40
+  {
+      height: 5px;
+  }
+  .vertical_spacer_100
+  {
+      height: 10px;
+  }
+}

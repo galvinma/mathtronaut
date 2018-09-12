@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import {
   Modal,
   Button,
+  Grid,
+  Col,
+  Row,
 } from 'react-bootstrap';
 
 // redux
@@ -27,20 +30,22 @@ class HighScoreModal extends React.Component {
 
   render() {
     return (
-      <div id="hsmodal">
-        <Modal.Dialog>
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title-sm">MATHTRONAUT HIGH SCORE</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <input id="username_input" />
-          </Modal.Body>
-          <Modal.Footer>
-            <div id="hsmessage">A score of {this.props.score.score} is legendary. Place your name among the stars.</div>
-            <div></div>
-            <div id="modal_error">Valid entries are less than 20 characters. Please try again.</div>
-          </Modal.Footer>
-        </Modal.Dialog>
+      <div>
+        <Grid>
+          <Row className="show-grid">
+            <Col sm={6} smOffset={3}>
+              <div id="hsmodal">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <div id="modal_title">MATHTRONAUT HIGH SCORE</div>
+                <input id="username_input" />
+                <div id="hsmessage">A score of {this.props.score.score} is legendary. Place your name among the stars.</div>
+                <div id="modal_error">Valid entries are less than 20 characters. Please try again.</div>
+              </div>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     )
   }

@@ -138,6 +138,11 @@ export function endGame() {
     checkHighScore();
   }
 
+  if (store.getState().location.location === "PRACTICE")
+  {
+    hideMathJumbo();
+  }
+
   // redux
   setLock(false)
   resetCount();

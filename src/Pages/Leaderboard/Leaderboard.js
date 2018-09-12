@@ -26,7 +26,7 @@ export default class Leaderboard extends React.Component {
       location: "LEADERBOARD",
     }))
 
-    axios.get('http://mathtronaut.org:5100/api/v1/leaderboard')
+    axios.get('https://api.mathtronaut.org:5100/api/v1/leaderboard')
     .then((response) => {
 
        var l = [];

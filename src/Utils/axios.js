@@ -9,7 +9,7 @@ export function numberGenerator(mode) {
     selector = 3
   }
   return new Promise(function(resolve, reject) {
-    var numbers = axios.get('https://mathtronaut.org:5100/api/v1/regularmode', {
+    var numbers = axios.get('https://api.mathtronaut.org:5100/api/v1/regularmode', {
       params: {
         num: selector
       }

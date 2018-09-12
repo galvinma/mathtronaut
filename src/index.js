@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 
 // redux
@@ -17,8 +17,8 @@ import App from './App'
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <HashRouter>
       <App />
-    </Router>
+    </HashRouter>
   </Provider>,
 document.getElementById('root'));

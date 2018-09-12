@@ -48,7 +48,7 @@ export function sendHighScore() {
       }
 
       else if (entry.length < 20 && entry.length > 0) {
-          axios.get('http://mathtronaut.org:5100/api/v1/insertuser', {
+          axios.get('https://mathtronaut.org:5100/api/v1/insertuser', {
             params: {
               username: entry,
               score: store.getState().score.score
@@ -65,7 +65,7 @@ export function sendHighScore() {
 }
 
 export function checkHighScore() {
-  var ishigh = axios.get('http://mathtronaut.org:5100/api/v1/istop', {
+  var ishigh = axios.get('https://mathtronaut.org:5100/api/v1/istop', {
     params: {
       score: store.getState().score.score
     }

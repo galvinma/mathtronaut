@@ -19,7 +19,6 @@ def insert_user(username, score):
 def remove_lowest_score():
     Q = Query()
     low = int(min([x['score'] for x in db.all()]))
-    print(low)
     db.remove(Q.score <= low)
     return
 
@@ -46,7 +45,7 @@ def insert():
     score = request.args.get('score')
     if len(db.all()) < 25:
         insert_user(username, score)
-    else:
+    if len(db.all()) >= 25:
         remove_lowest_score()
         insert_user(username, score)
     return jsonify(None)

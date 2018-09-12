@@ -53,7 +53,7 @@ export default class Leaderboard extends React.Component {
                 <Table responsive >
                   <thead>
                     <tr>
-                      <th>#</th>
+                      <th>Rank</th>
                       <th>Name</th>
                       <th>Score</th>
                     </tr>
@@ -67,6 +67,9 @@ export default class Leaderboard extends React.Component {
                           <td>{row[1]}</td>
                         </tr>
                       )})}
+                      <tr>
+                        <td id="footer_text" colSpan={3}>Leaderboard scores persist for 24 hours</td>
+                      </tr>
                   </tbody>
                 </Table>
               </div>

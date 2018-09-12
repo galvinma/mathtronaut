@@ -73,9 +73,16 @@ export function checkHighScore() {
   .then((response) => {
     if (response.data === true)
     {
+      hideMathJumbo();
+      hideGameEntryAndAnswer();
+      hideMathForm();
       showModal();
       reloadRocketLaunching();
       displayRocketLaunch();
+    }
+    else
+    {
+      displayFinalScore();  
     }
    })
   .catch((error)=>{
@@ -91,9 +98,6 @@ export function showModal() {
     m.style.display = 'block';
     var n = document.getElementById('username_input')
     n.focus();
-    hideMathJumbo();
-    hideGameEntryAndAnswer();
-    hideMathForm();
 }
 
 export function hideModal() {
@@ -129,7 +133,6 @@ export function endGame() {
   var elem = document.getElementById("bar");
   elem.style.width = '0%';
 
-  displayFinalScore();
   if (store.getState().location.location === "REGULAR" )
   {
     checkHighScore();

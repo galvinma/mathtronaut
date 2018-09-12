@@ -3,15 +3,24 @@
   display: block;
   max-height:70vh;
   font-family: 'Roboto', sans-serif;
-  border-radius: 6px;
 }
 
 .table
 {
-  border-radius: 6px;
+  border-radius: 6px !important;
   border: none !important;
   text-align: center;
   background-color: rgba(220, 220, 220, 0.7) !important;
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+}
+
+.table-responsive
+{
+  border-radius: 6px !important;
+  border: none !important;
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
 }
 
 th, td
@@ -20,23 +29,16 @@ th, td
   padding: 10px !important;
   border: none !important;
   border-bottom: none !important;
+
 }
 
 th
 {
   font-size: 16px;
-  /* background-color: rgba(140, 140, 140, 0.8) !important;
-  border-bottom: 2px solid rgba(140, 140, 140, 0.6) !important; */
 }
 
-.scrollbar
+#footer_text
 {
-  background-color: #F5F5F5;
-  float: left;
-  height: 300px;
-  margin-bottom: 25px;
-  margin-left: 22px;
-  margin-top: 40px;
-  width: 65px;
-  overflow-y: scroll;
+  text-align: center;
+  font-weight: bold;
 }

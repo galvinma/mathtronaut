@@ -2,19 +2,30 @@
 {
   height: 100%;
   min-height: 100px;
-  min-width: 300px;
+  min-width: 200px;
   width: 100%;
   padding: 10px;
   background: rgba(220, 220, 220, 0.7) !important;
   font-size: 48px;
+  justify-content: center !important;
+  text-align: center !important;
+  align-items: center !important;
 }
 
 .math_form
 {
   display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+  justify-content: center !important;
+  text-align: center !important;
+  align-items: center !important;
+}
+
+#math_form_container
+{
+  display: flex;
+  justify-content: center !important;
+  text-align: center !important;
+  align-items: center !important;
 }
 
 .answer
@@ -49,4 +60,36 @@
   display: none;
   border-bottom: 2px solid black;
   outline: none;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  .jumbotron
+    {
+      font-size: 32px !important;
+      max-width: 60vw !important;
+      margin-bottom: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+  .jumbotron
+    {
+      font-size: 5em !important;
+      max-width: 80vw !important;
+      margin-bottom: 15px !important;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+  .jumbotron
+    {
+      font-size: 2.5em !important;
+      min-height: 75px !important;
+      margin-bottom: 10px !important;
+      max-width: 90vw !important;
+    }
+
 }

@@ -23,12 +23,12 @@ export function resetGameState() {
 
 export function displayMathJumbo() {
   var e = document.getElementById('math_jumbo_container');
-  e.style.display = 'block';
+  e.style.display = 'flex';
 }
 
 export function displayMathForm() {
   var e = document.getElementById('math_form_container');
-  e.style.display = 'block';
+  e.style.display = 'flex';
 }
 
 export function hideMathJumbo() {

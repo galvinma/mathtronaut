@@ -29,17 +29,17 @@ class MathJumbo extends React.Component {
         <Grid>
           <Row className="show-grid">
             <Col sm={4} smOffset={4}>
-              <div id="math_jumbo_container">
-                <Jumbotron>
-                  <div id="math_jumbo" className="math_jumbo">
-                    { this.props.left.left } x { this.props.mid.mid }
-                  </div>
-                  <div id="final_score">
-                    <div>SCORE</div>
-                    <div>{ this.props.score.score }</div>
-                  </div>
-                  <ProgressBar />
-                </Jumbotron>
+                <div id="math_jumbo_container">
+                  <Jumbotron>
+                    <div id="math_jumbo" className="math_jumbo">
+                      { this.props.left.left } x { this.props.mid.mid }
+                    </div>
+                    <div id="final_score">
+                      <div>SCORE</div>
+                      <div>{ this.props.score.score }</div>
+                    </div>
+                    <ProgressBar />
+                  </Jumbotron>
               </div>
             </Col>
           </Row>

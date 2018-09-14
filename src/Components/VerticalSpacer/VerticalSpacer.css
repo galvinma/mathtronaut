@@ -20,3 +20,14 @@
       height: 10px;
   }
 }
+
+@media only screen and (max-width: 450px) {
+  .vertical_spacer_40
+  {
+      height: 1px;
+  }
+  .vertical_spacer_100
+  {
+      height: 2px;
+  }
+}

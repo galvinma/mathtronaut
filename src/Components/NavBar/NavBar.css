@@ -18,6 +18,12 @@
   color: rgba(220, 220, 220, 0.7) !important;
   font-size: 1.2em !important;
   font-weight: 300;
+  text-align: left;
+}
+
+.styled_nav_link li,a
+{
+  margin-left: 5px;
 }
 
 .navbar-header
@@ -46,7 +52,21 @@ li.mathronaut_brand
   width: auto !important;
 }
 
+@media only screen and (max-width: 1000px) {
+  .styled_nav_link li,a
+  {
+  font-size: 1em !important;
+  }
+
+}
+
 @media only screen and (max-width: 768px) {
+
+  .navbar
+  {
+    margin-bottom: 5px !important;
+  }
+
   li.mathronaut_brand {
     font-size: 3rem;
     padding-left:20px !important;
@@ -58,7 +78,26 @@ li.mathronaut_brand
   li.mathronaut_brand {
     font-size: 2rem;
     font-weight: 500;
-    padding-left:20px !important;
-    padding-right:20px !important;
+    padding-left:5px !important;
+    padding-right:5px !important;
   }
+
+  button.navbar-toggle.collapsed, button.navbar-toggle
+  {
+    margin-right: 8px !important;
+    margin-left: 2px !important;
+  }
+
+  .navbar-header
+  {
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+  }
+
+  .container
+  {
+    padding-right: 3px !important;
+    padding-left: 3px!important;
+  }
+
 }

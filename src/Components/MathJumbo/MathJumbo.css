@@ -1,9 +1,8 @@
 .math_jumbo
 {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center !important;
+  text-align: center !important;
+  align-items: center !important;
   width: 100%;
   display: none;
 }
@@ -11,4 +10,7 @@
 #math_jumbo_container
 {
   display: none;
+  justify-content: center !important;
+  text-align: center !important;
+  align-items: center !important;
 }

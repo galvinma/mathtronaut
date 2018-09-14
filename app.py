@@ -14,11 +14,13 @@ db = TinyDB('scores.json')
 
 def insert_user(username, score):
     print("In insert_user. Inserting user...")
+    print("Length of db is "+str(len(db.all())))
     db.insert({'username': username, 'score': int(score), 'timestamp': str(datetime.datetime.now())})
     return
 
 def remove_lowest_score():
     print("In remove_lowest_score. Removing user...")
+    print("Length of db is "+str(len(db.all())))
     Q = Query()
     low = int(min([x['score'] for x in db.all()]))
     print("Low score is... "+str(low))
@@ -28,6 +30,7 @@ def remove_lowest_score():
 
 @app.route("/api/v1/leaderboard", methods=['GET'])
 def return_leaderboard():
+    print("Length of db is "+str(len(db.all())))
     leaders = sorted(db.all(), key=operator.itemgetter('score'), reverse=True)
     return jsonify(leaders)
 

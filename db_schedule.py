@@ -7,7 +7,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 from model import DeclarativeBase, HighScores
 
-original_engine = create_engine('postgresql://mathtronaut@localhost/mathtronaut')
+original_engine = create_engine('postgresql:///mathtronaut')
 Session = sessionmaker(bind=original_engine)
 metadata = DeclarativeBase.metadata
 metadata.create_all(original_engine)

@@ -61,8 +61,8 @@ export default class Leaderboard extends React.Component {
                   <tbody >
                     {this.state.leaders.map(function(row, i) {
                       return (
-                        <tr>
-                          <td>{i+1}</td>
+                        <tr key={i}>
+                          <td >{i+1}</td>
                           <td>{row[0]}</td>
                           <td>{row[1]}</td>
                         </tr>

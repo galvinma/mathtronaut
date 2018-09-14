@@ -7,14 +7,11 @@ import MathForm from '../.././Components/MathForm/MathForm'
 import VerticalSpacer40 from '../.././Components/VerticalSpacer/VerticalSpacer40'
 import MathNotification from '../.././Components/MathNotification/MathNotification'
 import HighScoreModal from '../.././Components/HighScoreModal/HighScoreModal'
-import ProgressBar from '../.././Components/ProgressBar/ProgressBar'
 
 // Functions
 import { resetGame } from '../.././Utils/mode'
-import {  displayRocketLaunch,
-          displayRocketLanding,
-          reloadRocketLanding,
-          reloadRocketLaunching, } from '../.././Utils/background.js'
+import {  displayRocketLanding,
+          reloadRocketLanding } from '../.././Utils/background.js'
 
 // redux
 import store from '../.././Store/store'

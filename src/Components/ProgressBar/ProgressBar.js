@@ -1,10 +1,4 @@
 import React from 'react'
-import {
-  Grid,
-  Row,
-  Col,
-  Jumbotron,
-} from 'react-bootstrap';
 
 // class
 

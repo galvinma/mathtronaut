@@ -3,7 +3,6 @@ import axios from 'axios';
 // redux
 import store from '.././Store/store'
 import { getModalBool } from '.././Actions/actions'
-import { getProgressBarId } from '.././Actions/actions'
 
 // functions
 import { scoreQuestion } from "./score"
@@ -37,7 +36,7 @@ import {  displayRocketLaunch,
 export function sendHighScore() {
   try {
       var entry = document.getElementById('username_input').value;
-      if (entry.length >= 20 || entry.length == 0 || entry == "")
+      if (entry.length >= 20 || entry.length === 0 || entry === "")
       {
         var v = document.getElementById('modal_error');
         v.style.display = 'block';
@@ -65,7 +64,7 @@ export function sendHighScore() {
 }
 
 export function checkHighScore() {
-  var ishigh = axios.get('https://api.mathtronaut.org:5100/api/v1/istop', {
+  axios.get('https://api.mathtronaut.org:5100/api/v1/istop', {
     params: {
       score: store.getState().score.score
     }

@@ -16,8 +16,9 @@ CORS(app)
 # db
 with open(expanduser('~/.pgpass'), 'r') as f:
     host, port, database, user, password = f.read().split(':')
-original_engine = create_engine('postgresql://mathtronaut:{password}@localhost/mathtronaut')
-Session = sessionmaker(bind=original_engine)
+uri = "postgresql://mathtronaut:"+str(password.strip())+"@localhost/mathtronaut"
+original_engine = create_engine(uri)
+Session = sessionmaker(original_engine)
 metadata = DeclarativeBase.metadata
 metadata.create_all(original_engine)
 session = Session()
@@ -75,4 +76,4 @@ def insert():
     return jsonify(None)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5100, ssl_context=('/etc/letsencrypt/live/matthewrgalvin.com/fullchain.pem', '/etc/letsencrypt/live/matthewrgalvin.com/privkey.pem'))
+	app.run(host='0.0.0.0', port=5100, ssl_context=('/etc/letsencrypt/live/matthewrgalvin.com/fullchain.pem', '/etc/letsencrypt/live/matthewrgalvin.com/privkey.pem'))

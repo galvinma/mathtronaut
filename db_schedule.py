@@ -8,10 +8,11 @@ from sqlalchemy.ext.declarative import declarative_base
 
 from model import DeclarativeBase, HighScores
 
+
 with open(expanduser('~/.pgpass'), 'r') as f:
     host, port, database, user, password = f.read().split(':')
-
-original_engine = create_engine('postgresql://mathtronaut:{password}@localhost/mathtronaut')
+uri = "postgresql://mathtronaut:"+str(password.strip())+"@localhost/mathtronaut"
+original_engine = create_engine(uri)
 Session = sessionmaker(bind=original_engine)
 metadata = DeclarativeBase.metadata
 metadata.create_all(original_engine)

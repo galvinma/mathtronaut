@@ -13,7 +13,7 @@ const MathForm = () => (
   <div id="form">
     <Grid>
       <Row className="show-grid">
-        <Col sm={4} smOffset={4}>
+        <Col sm={6} smOffset={3}>
           <div id="math_form_container">
             <Jumbotron className="math_form">
               <div>

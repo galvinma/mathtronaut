@@ -27,7 +27,7 @@ class HighScoreModal extends React.Component {
         <Grid>
           <Row className="show-grid">
             <div id="hsmodalcontainer">
-              <Col sm={6} md={4}>
+              <Col sm={6} md={6}>
                 <div id="hsmodal">
                   <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>

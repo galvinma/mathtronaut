@@ -7,6 +7,8 @@ import {
   Jumbotron,
 } from 'react-bootstrap';
 
+// redux
+
 // Functions
 import { handleSubmit } from '../.././Utils/mode'
 
@@ -28,11 +30,12 @@ class MathJumbo extends React.Component {
       <div>
         <Grid>
           <Row className="show-grid">
-            <Col sm={4} smOffset={4}>
+            <Col sm={6} smOffset={3}>
                 <div id="math_jumbo_container">
                   <Jumbotron>
                     <div id="math_jumbo" className="math_jumbo">
-                      { this.props.left.left } x { this.props.mid.mid }
+                      <div className="question_count">{ this.props.count.count } / 10</div>
+                      <div>{ this.props.left.left } x { this.props.mid.mid }</div>
                     </div>
                     <div id="final_score">
                       <div>SCORE</div>
@@ -54,7 +57,8 @@ const mapStateToProps = state => {
     mid: state.mid,
     right: state.right,
     time: state.time,
-    score: state.score
+    score: state.score,
+    count: state.count,
   }
 }
 

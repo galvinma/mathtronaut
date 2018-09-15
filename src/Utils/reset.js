@@ -58,7 +58,7 @@ export function displayGameEntry() {
 export function displayGameAnswer() {
   var e = document.getElementById('game_entry');
   var a = document.getElementById('game_answer');
-  a.style.display = 'block';
+  a.style.display = 'inline-block';
   e.style.display = 'none';
   a.focus();
   a.select();

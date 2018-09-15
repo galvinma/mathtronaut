@@ -21,6 +21,7 @@ class HighScoreModal extends React.Component {
 
   }
 
+
   render() {
     return (
       <div>

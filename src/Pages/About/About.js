@@ -30,7 +30,7 @@ const About = (props) => (
     <Grid>
       <Row className="show-grid">
           <Col sm={6} md={6}>
-            <Jumbotron>
+            <Jumbotron className="about">
             <div id="about_info">
               <div>Mathtronaut is an open source space themed website designed to make learning mathmatics fun. If you like mathtronaut, please consider donating:</div>
               <ul>

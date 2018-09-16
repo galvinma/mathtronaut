@@ -35,7 +35,7 @@
 
 #math_question_display
 {
-  border: 2px solid transparent
+  border: 3px solid transparent
 }
 
 .math_top_container
@@ -46,13 +46,13 @@
 @media only screen and (max-width: 768px) {
   #question_count, #math_notification
   {
-    font-size: 0.25em !important;
+    font-size: 0.4em !important;
   }
 }
 
 @media only screen and (max-width: 450px) {
   #question_count, #math_notification
   {
-    font-size: 0.3em !important;
+    font-size: 0.45em !important;
   }
 }

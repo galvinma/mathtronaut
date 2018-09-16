@@ -19,6 +19,7 @@ import {  GET_LEFT,
           GET_START_TIME,
           MODAL_BOOL,
           PROGRESS_BAR_ID,
+          FLASH_ID,
         }
 from "../Constants/action-types";
 
@@ -42,6 +43,7 @@ const initialState = {
   start_time: {start_time:0},
   modal_bool: {modal_bool:false},
   progress_bar_id: {progress_bar_id:0},
+  flash_id: {flash_id:0}
 };
 
 function rootReducer(state = initialState, action) {
@@ -80,6 +82,8 @@ function rootReducer(state = initialState, action) {
         return getModalBool(state, action.modal_bool)
     case PROGRESS_BAR_ID:
         return getProgressBarId(state, action.progress_bar_id)
+    case FLASH_ID:
+        return getFlashId(state, action.flash_id)
     default:
       return state;
   }
@@ -194,6 +198,13 @@ function getProgressBarId(state, progress_bar_id) {
   return {
     ...state,
     progress_bar_id: progress_bar_id
+  }
+}
+
+function getFlashId(state, flash_id) {
+  return {
+    ...state,
+    flash_id: flash_id
   }
 }
 

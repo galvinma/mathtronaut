@@ -93,3 +93,8 @@ export const getProgressBarId = progress_bar_id => ({
   type: "PROGRESS_BAR_ID",
   progress_bar_id
 })
+
+export const getFlashId = flash_id => ({
+  type: "FLASH_ID",
+  flash_id
+})

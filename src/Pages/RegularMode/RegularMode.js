@@ -5,7 +5,6 @@ import lifecycle from 'react-pure-lifecycle';
 import MathJumbo from '../.././Components/MathJumbo/MathJumbo'
 import MathForm from '../.././Components/MathForm/MathForm'
 import VerticalSpacer40 from '../.././Components/VerticalSpacer/VerticalSpacer40'
-import MathNotification from '../.././Components/MathNotification/MathNotification'
 import HighScoreModal from '../.././Components/HighScoreModal/HighScoreModal'
 
 // Functions
@@ -51,7 +50,6 @@ const RegularMode = (props) => (
     <MathJumbo />
     <VerticalSpacer40 />
     <MathForm />
-    <MathNotification />
     <HighScoreModal />
   </div>
 );

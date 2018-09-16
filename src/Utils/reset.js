@@ -85,13 +85,20 @@ export function hideMathJumboText() {
 }
 
 export function displayMathNotification() {
-  var mn = document.getElementById('math_notif');
-  mn.style.display = 'block';
+  var mn = document.getElementById('math_notification');
+  mn.style.display = 'display: inline-block !important;';
 }
 
 export function hideMathNotification() {
-  var mn = document.getElementById('math_notif');
+  var mn = document.getElementById('math_notification');
   mn.style.display = 'none';
+  mn.innerHTML = '';
+  var a = document.getElementById('question_count');
+  a.style.width = '100%'
+  var w = document.getElementById('math_question_display')
+  w.style.border = '2px solid transparent';
+  clearTimeout(store.getState().flash_id.flash_id);
+
 }
 
 export function displayProgressBar() {

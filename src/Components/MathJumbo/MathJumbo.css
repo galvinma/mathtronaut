@@ -15,7 +15,44 @@
   align-items: center !important;
 }
 
-.question_count {
-  font-size: 0.4em !important;
+#question_count
+{
+  display: inline-block !important;
+  font-size: 0.3em !important;
+  float: right !important;
   text-align: right;
+  width: 100%;
+}
+
+#math_notification
+{
+  display: inline-block !important;
+  float: left !important;
+  font-size: 0.3em !important;
+  width: 0%;
+  text-align: left;
+}
+
+#math_question_display
+{
+  border: 2px solid transparent
+}
+
+.math_top_container
+{
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  #question_count, #math_notification
+  {
+    font-size: 0.25em !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #question_count, #math_notification
+  {
+    font-size: 0.3em !important;
+  }
 }

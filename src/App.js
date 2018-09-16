@@ -7,6 +7,7 @@ import PracticeMenu from './Pages/PracticeMenu/PracticeMenu'
 import PracticeMode from './Pages/PracticeMode/PracticeMode'
 import Leaderboard from './Pages/Leaderboard/Leaderboard'
 import Landing from './Pages/Landing/Landing'
+import About from './Pages/About/About'
 
 // Components
 import NavBar from './Components/NavBar/NavBar'
@@ -50,6 +51,12 @@ const _Leaderboard = () => (
   </div>
 )
 
+const _About = () => (
+  <div>
+    <About />
+  </div>
+)
+
 class App extends Component {
 
   componentDidMount() {
@@ -76,6 +83,7 @@ class App extends Component {
           <Route path="/leaderboard" exact component={_Leaderboard}/>
           <Route path="/practicemenu" component={_PracticeMenu}/>
           <Route path="/practicemode" component={_PracticeMode}/>
+          <Route path="/about" component={_About}/>
       </div>
     )
   }

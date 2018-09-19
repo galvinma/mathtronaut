@@ -37,6 +37,7 @@ class HighScoreModal extends React.Component {
                   <input id="username_input" />
                   <div id="hsmessage">A score of {this.props.score.score} is legendary. Place your name among the stars.</div>
                   <div id="modal_error">Valid entries are less than 20 characters. Please try again.</div>
+                  <div id="modal_language">Invalid characters in entry. Please try again.</div>
                 </div>
               </Col>
             </div>

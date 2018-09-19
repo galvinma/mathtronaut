@@ -36,6 +36,8 @@ import {  displayRocketLaunch,
 export function sendHighScore() {
   try {
       var entry = document.getElementById('username_input').value;
+      var Filter = require('bad-words'),
+          filter = new Filter();
       if (entry.length >= 20 || entry.length === 0 || entry === "")
       {
         var v = document.getElementById('modal_error');
@@ -45,7 +47,17 @@ export function sendHighScore() {
         }, 5000);
         return;
       }
-      else if (entry.length < 20 && entry.length > 0) {
+      else if (filter.isProfane(entry))
+      {
+        var z = document.getElementById('modal_language');
+        z.style.display = 'block';
+        setTimeout(function() {
+          z.style.display = 'none';
+        }, 5000);
+        return;
+      }
+      else if (entry.length < 20 && entry.length > 0)
+      {
           axios.get('https://api.mathtronaut.org:5100/api/v1/insertuser', {
             params: {
               username: entry,
@@ -59,7 +71,7 @@ export function sendHighScore() {
       console.log(err)
   }
   finally {
-
+      console.log("no err, returning")
   }
 }
 

@@ -41,6 +41,12 @@
   color: rgb(169, 68, 66)
 }
 
+#modal_language
+{
+  display: none;
+  color: rgb(169, 68, 66)
+}
+
 #hsmessage
 {
   padding-top: 20px;

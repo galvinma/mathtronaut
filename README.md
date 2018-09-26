@@ -1,3 +1,3 @@
 # mathtronaut
 
-Space themed website for learning multiplication. See mathtronaut.org.
+Space themed website for learning multiplication. See [mathtronaut.org](https://mathtronaut.org).

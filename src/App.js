@@ -68,8 +68,6 @@ class App extends Component {
   }
 
   render() {
-    var landingback = require('./Images/Background/Rocket_Landing_Background.gif')
-    var launchingback = require('./Images/Background/Rocket_Launch_Background.gif')
     return (
       <div>
         <img id="landing_static" alt="" style ={ { backgroundImage: "url("+landingback+")" } }/>

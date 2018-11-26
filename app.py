@@ -48,6 +48,7 @@ def return_leaderboard():
 
 @app.route("/api/v1/istop", methods=['GET'])
 def is_top():
+    print("got here")
     score = int(request.args.get('score'))
     leaderboard = session.query(HighScores).order_by(HighScores.score)
     if leaderboard.count() >= 0 and leaderboard.count() < 25:

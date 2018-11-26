@@ -39,6 +39,7 @@ def remove_lowest_score():
 
 @app.route("/api/v1/leaderboard", methods=['GET'])
 def return_leaderboard():
+    print("Returning leaders...")
     leaders = []
     q = session.query(HighScores).order_by(HighScores.score)
     for entry in q.all():
@@ -48,7 +49,7 @@ def return_leaderboard():
 
 @app.route("/api/v1/istop", methods=['GET'])
 def is_top():
-    print("got here")
+    print("Checking top...")
     score = int(request.args.get('score'))
     leaderboard = session.query(HighScores).order_by(HighScores.score)
     if leaderboard.count() >= 0 and leaderboard.count() < 25:

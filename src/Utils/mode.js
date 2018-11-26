@@ -58,6 +58,7 @@ export function sendHighScore() {
       }
       else if (entry.length < 20 && entry.length > 0)
       {
+          console.log("checking score")
           axios.get('https://api.mathtronaut.org:5100/api/v1/insertuser', {
             params: {
               username: entry,

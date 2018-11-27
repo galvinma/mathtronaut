@@ -145,15 +145,24 @@ export function endGame() {
   var elem = document.getElementById("bar");
   elem.style.width = '0%';
 
-  if (store.getState().location.location === "REGULAR" )
-  {
-    checkHighScore();
-  }
+  // if (store.getState().location.location === "REGULAR" )
+  // {
+  //   checkHighScore();
+  // }
 
-  if (store.getState().location.location === "PRACTICE" )
+  if (store.getState().location.location === "PRACTICE" || store.getState().location.location === "REGULAR" )
   {
     // this occurs during check score call in regular mode
     displayFinalScore();
+    reloadRocketLaunching();
+    displayRocketLaunch();
+
+    setTimeout(function()
+    {
+      reloadRocketLanding();
+      displayRocketLanding();
+    }, 3000);
+
   }
 
   // redux

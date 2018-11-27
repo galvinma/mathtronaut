@@ -23,7 +23,7 @@ const componentDidMount = () => {
   resetGame();
 
   store.dispatch(getLocation({
-    location: "PRACTICE",
+    location: "REGULAR",
   }))
 
 };

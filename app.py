@@ -78,4 +78,4 @@ def insert():
     return jsonify(None)
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=5100, ssl_context=('/etc/letsencrypt/live/matthewrgalvin.com/fullchain.pem', '/etc/letsencrypt/live/matthewrgalvin.com/privkey.pem'))
+	app.run(host='0.0.0.0', port=5100, ssl_context=('/etc/letsencrypt/live/api.mathtronaut.org/fullchain.pem', '/etc/letsencrypt/live/api.mathtronaut.org/privkey.pem'))

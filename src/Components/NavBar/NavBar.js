@@ -21,7 +21,6 @@ export default class NavBar extends React.Component {
             <Nav pullRight>
               <NavItem componentClass={NavLink} activeClassName='active' className="styled_nav_link" href="/regularmode" to="/regularmode">PLAY</NavItem>
               <NavItem componentClass={NavLink} activeClassName='active' className="styled_nav_link" id="practicemenu_link" href="/practicemenu" to="/practicemenu">PRACTICE</NavItem>
-              <NavItem componentClass={NavLink} activeClassName='active' className="styled_nav_link" href="/leaderboard" to="/leaderboard">LEADERBOARD</NavItem>
               <NavItem componentClass={NavLink} activeClassName='active' className="styled_nav_link" href="/about" to="/about">ABOUT</NavItem>
             </Nav>
           </Navbar.Collapse>

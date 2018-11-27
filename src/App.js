@@ -5,7 +5,6 @@ import { Route } from 'react-router-dom';
 import RegularMode from './Pages/RegularMode/RegularMode'
 import PracticeMenu from './Pages/PracticeMenu/PracticeMenu'
 import PracticeMode from './Pages/PracticeMode/PracticeMode'
-import Leaderboard from './Pages/Leaderboard/Leaderboard'
 import Landing from './Pages/Landing/Landing'
 import About from './Pages/About/About'
 
@@ -45,12 +44,6 @@ const _PracticeMode = () => (
   </div>
 )
 
-const _Leaderboard = () => (
-  <div>
-    <Leaderboard />
-  </div>
-)
-
 const _About = () => (
   <div>
     <About />
@@ -80,7 +73,6 @@ class App extends Component {
 
           <Route path="/" exact component={_Landing}/>
           <Route path="/regularmode" exact component={_RegularMode} />
-          <Route path="/leaderboard" exact component={_Leaderboard}/>
           <Route path="/practicemenu" component={_PracticeMenu}/>
           <Route path="/practicemode" component={_PracticeMode}/>
           <Route path="/about" component={_About}/>

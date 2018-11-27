@@ -68,7 +68,6 @@ class App extends Component {
         <img id="landing_static" alt="" style ={ { backgroundImage: "url("+landingback+")" } }/>
         <img id="landing_background" alt="" style ={ { backgroundImage: "url("+landingback+")" } }/>
         <img id="launching_background" alt="" style ={ { backgroundImage: "url("+launchingback+")" } }/>
-          <ShootingStarAnimation />
           <NavBar />
 
           <Route path="/" exact component={_Landing}/>

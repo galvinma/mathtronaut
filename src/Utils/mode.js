@@ -155,11 +155,11 @@ export function endGame() {
     // this occurs during check score call in regular mode
     displayFinalScore();
     reloadRocketLaunching();
+    reloadRocketLanding();
     displayRocketLaunch();
 
     setTimeout(function()
     {
-      reloadRocketLanding();
       displayRocketLanding();
     }, 5000);
 
@@ -170,16 +170,16 @@ export function endGame() {
   resetCount();
 }
 
-  export function resetGame() {
-  // redux
-  resetScore();
-  resetQuestionCount();
-  setLock(false);
-  // UI
-  document.getElementById('game_answer').value = "";
-  displayGameEntry();
-  hideMathJumboText();
-  hideFinalScore();
+export function resetGame() {
+// redux
+resetScore();
+resetQuestionCount();
+setLock(false);
+// UI
+document.getElementById('game_answer').value = "";
+displayGameEntry();
+hideMathJumboText();
+hideFinalScore();
 }
 
   export function enterGame() {

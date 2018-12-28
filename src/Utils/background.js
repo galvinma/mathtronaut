@@ -19,7 +19,7 @@ export function displayRocketLaunch() {
   launch.style.display = 'block';
   setTimeout(function(){
     landing.style.display = 'none';
-  }, 500);
+  }, 10);
 }
 
 export function displayRocketLanding() {
@@ -29,5 +29,5 @@ export function displayRocketLanding() {
   landing.style.display = 'block';
   setTimeout(function(){
     launch.style.display = 'none';
-  }, 500);
+  }, 10);
 }

@@ -161,7 +161,7 @@ export function endGame() {
     {
       reloadRocketLanding();
       displayRocketLanding();
-    }, 3000);
+    }, 5000);
 
   }
 
